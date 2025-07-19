@@ -1,0 +1,136 @@
+{
+    "tags": {
+        "worldbuilding": {
+            "description": "Content related to the fantasy world setting, including characters, locations, and lore",
+            "related": ["heroes", "cities", "characters", "fantasy"]
+        },
+        "heroes": {
+            "description": "Information about the Fivefold Oaths heroes and their businesses",
+            "related": ["worldbuilding", "characters", "businesses"]
+        },
+        "characters": {
+            "description": "Details about any characters in the Nubimancy world",
+            "related": ["heroes", "wizards", "worldbuilding"]
+        },
+        "wizards": {
+            "description": "Information about the Aethernet Assembly and other magical practitioners",
+            "related": ["characters", "aethernet-assembly", "technology"]
+        },
+        "cities": {
+            "description": "Information about locations and geography in the Nubimancy world",
+            "related": ["worldbuilding", "geography", "countries"]
+        },
+        "businesses": {
+            "description": "Details about the hero businesses and other commercial ventures",
+            "related": ["heroes", "business-central", "capabilities"]
+        },
+        "aethernet-assembly": {
+            "description": "Content specifically about the wizard council that advises the heroes",
+            "related": ["wizards", "technology", "characters"]
+        },
+        "technology": {
+            "description": "Information about real-world technology represented in the Nubimancy world",
+            "related": ["business-central", "azure", "microsoft-365", "power-platform"]
+        },
+        "business-central": {
+            "description": "Content related to Business Central features, capabilities, and implementation",
+            "related": ["capabilities", "erp", "technology"]
+        },
+        "capabilities": {
+            "description": "Specific functional areas within Business Central",
+            "related": ["business-central", "modules", "erp"]
+        },
+        "roles": {
+            "description": "Information about professional roles in Business Central partner organizations",
+            "related": ["var", "isv", "implementation", "organization"]
+        },
+        "var": {
+            "description": "Value-Added Reseller model for implementing Business Central",
+            "related": ["roles", "implementation", "consulting"]
+        },
+        "isv": {
+            "description": "Independent Software Vendor model for building products on Business Central",
+            "related": ["roles", "product", "development"]
+        },
+        "implementation": {
+            "description": "Content related to implementing Business Central solutions",
+            "related": ["var", "roles", "consulting"]
+        },
+        "partner": {
+            "description": "Information about Microsoft partner organizations",
+            "related": ["var", "isv", "organization"]
+        },
+        "devops": {
+            "description": "Content related to development operations and pipeline automation",
+            "related": ["pipelines", "ci-cd", "development"]
+        },
+        "pipelines": {
+            "description": "Automated processes for build, test, and deployment",
+            "related": ["devops", "ci-cd", "development"]
+        },
+        "ci-cd": {
+            "description": "Continuous integration and continuous deployment practices",
+            "related": ["devops", "pipelines", "development"]
+        },
+        "development": {
+            "description": "Content related to software development",
+            "related": ["devops", "product", "pipelines"]
+        },
+        "lifecycle": {
+            "description": "Application lifecycle management topics",
+            "related": ["telemetry", "support", "maintenance"]
+        },
+        "telemetry": {
+            "description": "Data collection and analysis from applications",
+            "related": ["lifecycle", "monitoring", "analytics"]
+        },
+        "support": {
+            "description": "Practices for supporting Business Central implementations",
+            "related": ["lifecycle", "maintenance", "service"]
+        },
+        "maintenance": {
+            "description": "Ongoing care and feeding of Business Central systems",
+            "related": ["lifecycle", "support", "updates"]
+        },
+        "industry-practices": {
+            "description": "Best practices and approaches in the Business Central partner ecosystem",
+            "related": ["partner-evolution", "consulting", "product"]
+        },
+        "partner-evolution": {
+            "description": "The journey of Microsoft partners from early stages to maturity",
+            "related": ["industry-practices", "maturity", "growth"]
+        },
+        "consulting": {
+            "description": "Service-based business model for Business Central",
+            "related": ["var", "industry-practices", "services"]
+        },
+        "product": {
+            "description": "Product-based business model for Business Central",
+            "related": ["isv", "industry-practices", "development"]
+        },
+        "organization": {
+            "description": "Information about organizational structures and operations",
+            "related": ["roles", "structure", "teams"]
+        },
+        "teaching-framework": {
+            "description": "Educational approaches and structures in the Nubimancy project",
+            "related": ["goals", "learning-paths", "education"]
+        },
+        "goals": {
+            "description": "Educational objectives and outcomes for Nubimancy",
+            "related": ["teaching-framework", "learning", "education"]
+        },
+        "learning-paths": {
+            "description": "Structured journeys through the educational content",
+            "related": ["teaching-framework", "progression", "skills"]
+        },
+        "tools": {
+            "description": "Technology tools and platforms used in Nubimancy",
+            "related": ["technology", "azure", "business-central"]
+        },
+        "education": {
+            "description": "General educational principles and approaches",
+            "related": ["teaching-framework", "goals", "learning"]
+        }
+    }
+}

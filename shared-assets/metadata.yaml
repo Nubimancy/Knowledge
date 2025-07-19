@@ -1,0 +1,90 @@
+metadata:
+  repository_purpose: "Centralized knowledge base for Nubimancy project"
+  primary_audience: "Content creators, developers, educators"
+  knowledge_domains:
+    - business_central: "Microsoft Dynamics 365 Business Central concepts and implementation"
+    - fantasy_worldbuilding: "Creative fantasy setting for Nubimancy"
+    - educational_framework: "Teaching methodologies and learning paths"
+    - partner_practices: "Microsoft partner organizational models and evolution"
+
+content_types:
+  markdown:
+    purpose: "Primary content: explanations, walkthroughs, lore, logic"
+    frontmatter_required: true
+    frontmatter_schema:
+      title: "Document title (string)"
+      tags: "Array of relevant tags from tags.json"
+      summary: "1-2 sentence description"
+      updated: "Date in YYYY-MM-DD format"
+  
+  jupyter:
+    purpose: "Interactive examples, prompt engineering, AI workflows"
+    metadata_required: true
+    metadata_schema:
+      title: "Notebook title"
+      description: "Purpose description"
+      tags: "Array of relevant tags"
+  
+  json:
+    purpose: "Structured data for tags, relationships, or semantic metadata"
+    schema_validation: true
+  
+  yaml:
+    purpose: "Configurations, glossary, ingestion metadata"
+    schema_validation: true
+
+folder_structure:
+  business-central:
+    description: "Business Central capabilities, roles, and implementation practices"
+    recommended_files:
+      - "bc-capabilities.md"
+      - "bc-roles.md"
+      - "bc-pipelines.md"
+      - "bc-lifecycle.md"
+  
+  worldbuilding:
+    description: "Fantasy world elements: heroes, cities, organizations"
+    recommended_files:
+      - "heroes.md"
+      - "cities.md"
+      - "aethernet-assembly.md"
+      - "business-central-teams.md"
+  
+  industry-practices:
+    description: "Partner models, organizational structures, best practices"
+    recommended_files:
+      - "partner-evolution.md"
+      - "consulting-vs-product.md"
+      - "org-roles.md"
+  
+  teaching-framework:
+    description: "Educational goals, learning paths, tool alignments"
+    recommended_files:
+      - "goals.md"
+      - "learning-paths.md"
+      - "tool-alignment.md"
+  
+  shared-assets:
+    description: "Glossary, tags, metadata for semantic search"
+    recommended_files:
+      - "glossary.md"
+      - "tags.json"
+      - "metadata.yaml"
+
+ingestion_guidance:
+  azure_blob:
+    container: "nubimancy-knowledge"
+    folder_structure: "mirror repository structure"
+    update_frequency: "on commit via GitHub Actions"
+  
+  azure_ai_search:
+    index_name: "nubimancy-knowledge"
+    chunk_size: "1000 characters"
+    overlap: "100 characters"
+    vector_dimensions: 1536
+    update_trigger: "blob storage event"
+  
+  copilot_studio:
+    connection_method: "Azure AI Search"
+    knowledge_base_name: "Nubimancy Knowledge"
+    refresh_schedule: "daily"
