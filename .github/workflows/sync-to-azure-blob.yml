@@ -1,0 +1,72 @@
+name: Sync to Azure Blob Storage
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '.github/**'
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+  workflow_dispatch:
+
+jobs:
+  sync-to-azure:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        
+    - name: Set up Azure CLI
+      uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v44
+      with:
+        files: |
+          **/*.md
+          **/*.ipynb
+          **/*.json
+          **/*.yaml
+          **/*.yml
+        
+    - name: Upload changed files to Azure Blob Storage
+      if: steps.changed-files.outputs.any_changed == 'true'
+      run: |
+        echo "Uploading changed files to Azure Blob Storage..."
+        for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+          if [ -f "$file" ]; then
+            # Create directory structure in blob storage
+            dir=$(dirname "$file")
+            echo "Processing $file (directory: $dir)"
+            
+            # Upload file to Azure Blob Storage
+            az storage blob upload \
+              --account-name nubimancyknowledge \
+              --container-name projectknowledge \
+              --name "$file" \
+              --file "$file" \
+              --auth-mode login
+          fi
+        done
+        
+    - name: Sync all files (on manual trigger)
+      if: github.event_name == 'workflow_dispatch'
+      run: |
+        echo "Syncing all content to Azure Blob Storage..."
+        find . -type f \( -name "*.md" -o -name "*.ipynb" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" \) -not -path "./.git/*" -not -path "./.github/*" | while read file; do
+          # Remove leading ./ from file path
+          rel_file=${file:2}
+          
+          # Upload file to Azure Blob Storage
+          az storage blob upload \
+            --account-name nubimancyknowledge \
+            --container-name projectknowledge \
+            --name "$rel_file" \
+            --file "$file" \
+            --auth-mode login
+        done
