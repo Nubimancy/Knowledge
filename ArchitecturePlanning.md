@@ -22,6 +22,104 @@
 - 15 PTE Components (hero-specific magical extensions)
 - 19 Test Applications (proper "good citizen" development practices)
 
+### **🎯 Object ID Allocation Strategy**
+*Cloud Sandbox Compatible - All apps deployable in PTE ranges (50,000-99,999)*
+
+#### **🌟 "AppSource-Style" Foundation Applications**
+**Main apps get 8k objects, test apps get 1k objects:**
+
+- **🏰 Nimbus Core Foundation**
+  - Main App: `80,000 - 87,999` (8,000 objects)
+  - Test App: `88,000 - 88,999` (1,000 objects)
+
+- **🚢 Transportation & Communication AppSource**
+  - Main App: `70,000 - 77,999` (8,000 objects)
+  - Test App: `78,000 - 78,999` (1,000 objects)
+
+- **⚔️ Competition & Service AppSource**
+  - Main App: `60,000 - 67,999` (8,000 objects)
+  - Test App: `68,000 - 68,999` (1,000 objects)
+
+- **🏭 Manufacturing & Retail AppSource**
+  - Main App: `90,000 - 97,999` (8,000 objects)
+  - Test App: `98,000 - 98,999` (1,000 objects)
+
+#### **⚙️ Hero Business PTEs**
+**Main PTEs get 800 objects, test apps get 200 objects:**
+
+**📦 Bran's Transportation PTEs (50,000-52,999):**
+- Mystical Route Planning: Main `50,000-50,799` | Test `50,800-50,999`
+- Arcane Scroll Processing: Main `51,000-51,799` | Test `51,800-51,999`
+- Caravan Festival Coordination: Main `52,000-52,799` | Test `52,800-52,999`
+
+**⚔️ Rini's Combat Sports PTEs (53,000-55,999):**
+- Dimensional Tournament Brackets: Main `53,000-53,799` | Test `53,800-53,999`
+- Fighter Progression Analytics: Main `54,000-54,799` | Test `54,800-54,999`
+- Multi-Realm Sports Broadcasting: Main `55,000-55,799` | Test `55,800-55,999`
+
+**🐾 Weltina's Creature Care PTEs (56,000-58,999):**
+- Advanced Creature Care Protocols: Main `56,000-56,799` | Test `56,800-56,999`
+- Patron Auction Management: Main `57,000-57,799` | Test `57,800-57,999`
+- Multi-Habitat Management: Main `58,000-58,799` | Test `58,800-58,999`
+
+**🪄 Delyra's Multi-Dimensional PTEs (59,000-61,999):**
+- Multi-planar Work Centers: Main `59,000-59,799` | Test `59,800-59,999`
+- Enchantment Refresh Services: Main `60,000-60,799` | Test `60,800-60,999`
+- Portal Shop Management: Main `61,000-61,799` | Test `61,800-61,999`
+
+**🍺 Thorin's Hospitality PTEs (62,000-64,999):**
+- Dwarven Ale Quality Tracking: Main `62,000-62,799` | Test `62,800-62,999`
+- Tavern Network Relationship Management: Main `63,000-63,799` | Test `63,800-63,999`
+- Community Event Orchestration: Main `64,000-64,799` | Test `64,800-64,999`
+
+**🎯 Allocation Benefits:**
+✅ **Cloud Deployable** - All apps use PTE-compatible ranges  
+✅ **Zero Conflicts** - Each app pair has dedicated, non-overlapping ranges  
+✅ **Scalable Design** - 8k objects for complex AppSource-style functionality  
+✅ **Efficient Testing** - 1k objects provides comprehensive test coverage  
+✅ **Hero-Focused** - Each hero gets 3k total objects across their 3 PTEs  
+
+## GUID Pool for the 38 apps
+
+2ed328c3-0c3f-4d51-a8d4-1d8677ed3f49
+b0e99a70-4c1f-4cce-8ebd-5a384191ddb5
+2eabad7c-8e84-4267-a87f-ec1074d3b0af
+5195420b-74d0-45ce-a543-2c8591ad7920
+327b783b-d732-427b-b4f2-842a9058f5a2
+377fed02-8b99-40dc-920f-6779ee9c917c
+918c7a2e-9ecf-442f-8308-a6ec8948e7ae
+34e27c81-9ac6-4c89-9f83-7468d884c202
+0fb8da66-7fb6-45bc-baa9-ff44d272ef3a
+07962a81-9ebf-4e4c-b78f-bc02213e5216
+901c98e5-56bf-4b57-bedb-c6b6916eb74a
+039bd969-5321-4ad9-a355-17faa68f07b8
+3fa0b022-5335-4fbe-988f-ba1109d4ac1a
+46a108f4-1aed-4f00-8170-7e09ad8f1d10
+fb53db67-ebce-4f0b-b613-16d73528bd12
+73a0d05c-5cd3-43fa-8f98-eaa53856ce09
+51b011e0-124a-475d-8376-c08f90759b5e
+b9fae4cf-7ee0-4378-9262-9660e5146dc3
+7cd7c85f-0c99-4301-a3b0-b57a3c5266ba
+2231c6a9-be06-423f-a26a-e6f908d66a26
+810ae21c-318f-4853-ba63-81dcc549ecc5
+0ba77c69-1063-43f4-b073-aec8045a56e0
+0785ab22-d9e9-4c25-9925-b5d0b622ec21
+d8a76d98-1e91-4c4a-a62e-d40ca194af5a
+5a489c36-7238-4fa0-a328-22402be84090
+f83165f1-d58e-4bda-b46d-0301f469898a
+54b1513d-dcd5-4120-ae86-d43402ecb8d9
+86bba180-31da-40fa-8fd7-7c4747f2f063
+8fd0ba48-55b3-4539-9033-143783f09efa
+d35bbefa-5680-45d7-9a96-197a2e6b04db
+d48474a8-bb04-4cd9-931b-a5ed29056a06
+1243b2ce-7e2c-4f82-96a0-21b8f004d44f
+34252d21-e044-44c5-8adf-27beda33d522
+d9e04fbf-c76d-4635-b2a2-374e6891d0f3
+b54cfa8d-9b64-4777-9c1e-8ddd0f15f17b
+4437dae7-a3d1-4657-9266-df03ffd7abe9
+a1a763e4-949f-4bd2-8fcd-5aa7e0cdb9a1
+a8559f9d-232d-4325-a62f-2ac0478fb8cf
+
 ---
 
 ### **🔨 Phase 1: The Private Creative Workshop**
