@@ -26,23 +26,23 @@
 *Cloud Sandbox Compatible - All apps deployable in PTE ranges (50,000-99,999)*
 
 #### **🌟 "AppSource-Style" Foundation Applications**
-**Main apps get 8k objects, test apps get 1k objects:**
+**Main apps get 800 objects, test apps get 200 objects:**
 
 - **🏰 Nimbus Core Foundation**
-  - Main App: `80,000 - 87,999` (8,000 objects)
-  - Test App: `88,000 - 88,999` (1,000 objects)
+  - Main App: `80,000 - 80,799` (800 objects)
+  - Test App: `80,800 - 80,999` (200 objects)
 
-- **🚢 Transportation & Communication AppSource**
-  - Main App: `70,000 - 77,999` (8,000 objects)
-  - Test App: `78,000 - 78,999` (1,000 objects)
+- **🚢 Nimbus Supply (Transportation & Communication)**
+  - Main App: `81,000 - 81,799` (800 objects)
+  - Test App: `81,800 - 81,999` (200 objects)
 
-- **⚔️ Competition & Service AppSource**
-  - Main App: `60,000 - 67,999` (8,000 objects)
-  - Test App: `68,000 - 68,999` (1,000 objects)
+- **⚔️ Nimbus Exhibition (Competition & Service)**
+  - Main App: `82,000 - 82,799` (800 objects)
+  - Test App: `82,800 - 82,999` (200 objects)
 
-- **🏭 Manufacturing & Retail AppSource**
-  - Main App: `90,000 - 97,999` (8,000 objects)
-  - Test App: `98,000 - 98,999` (1,000 objects)
+- **🏭 Nimbus Manufacturing (Manufacturing & Retail)**
+  - Main App: `83,000 - 83,799` (800 objects)
+  - Test App: `83,800 - 83,999` (200 objects)
 
 #### **⚙️ Hero Business PTEs**
 **Main PTEs get 800 objects, test apps get 200 objects:**
@@ -73,11 +73,12 @@
 - Community Event Orchestration: Main `64,000-64,799` | Test `64,800-64,999`
 
 **🎯 Allocation Benefits:**
-✅ **Cloud Deployable** - All apps use PTE-compatible ranges  
-✅ **Zero Conflicts** - Each app pair has dedicated, non-overlapping ranges  
-✅ **Scalable Design** - 8k objects for complex AppSource-style functionality  
-✅ **Efficient Testing** - 1k objects provides comprehensive test coverage  
-✅ **Hero-Focused** - Each hero gets 3k total objects across their 3 PTEs  
+✅ **Cloud Deployable** - All apps use PTE-compatible ranges
+✅ **Zero Conflicts** - Each app pair has dedicated, non-overlapping ranges
+✅ **Right-Sized Design** - 800 objects provides adequate functionality per app
+✅ **Efficient Testing** - 200 objects provides comprehensive test coverage
+✅ **Hero-Focused** - Each hero gets 3k total objects across their 3 PTEs
+✅ **Future Expansion** - Ranges 84,000-99,999 reserved for growth  
 
 ## GUID Pool for the 38 apps
 
