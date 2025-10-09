@@ -846,6 +846,66 @@ flowchart TD
 
 ---
 
+## 💻 **AL Development Standards & Conventions**
+
+### **Object Naming Rules**
+- **No affixes** on base objects (no "NUB" prefix)
+- **No spaces** in object names
+- **Examples:**
+  - ✅ `table 80001 GeneralSetup`
+  - ✅ `page 80001 GeneralSetup`
+  - ❌ `table 80001 "NUB General Setup"`
+  - ❌ `page 80001 "General Setup"`
+
+### **Field Naming Rules**
+- **No spaces** in field names
+- **No quote-requiring characters** (numbers, dots, special chars)
+- **No affixes** on base object fields
+- **Extensions ONLY:** Use `NIM` prefix (AppSource extensions) or `PTE` prefix (PTE extensions)
+- **Examples:**
+  - ✅ Base object: `field(1; CityCode; Code[20])`
+  - ✅ Extension: `field(80001; NIMTradeHubIndicator; Boolean)`
+  - ❌ Base object: `field(1; "City Code"; Code[20])`
+  - ❌ Extension: `field(80001; "Trade Hub Indicator"; Boolean)`
+
+### **File Naming Convention**
+- **Pattern:** `ObjectName.ObjectType.al`
+- **Examples:**
+  - ✅ `GeneralSetup.Table.al`
+  - ✅ `CityList.Page.al`
+  - ✅ `InstallationManagement.Codeunit.al`
+  - ❌ `Tab80001.GeneralSetup.al`
+  - ❌ `GeneralSetup.al`
+
+### **Folder Structure & Namespaces**
+- **Module folders** in `/src/` directory align with object domain
+- **Namespace pattern:** `Nimbus.[AppName].[ModuleTreeMultilevelPath]`
+- **Examples:**
+  - Path: `/src/Cities/Management/` → Namespace: `Nimbus.CoreFoundation.Cities.Management`
+  - Path: `/src/Guilds/Coordination/` → Namespace: `Nimbus.CoreFoundation.Guilds.Coordination`
+  - Path: `/src/Communication/Protocols/` → Namespace: `Nimbus.CoreFoundation.Communication.Protocols`
+
+### **Module Organization Pattern**
+```
+/src/
+  /Cities/
+    /Management/
+      City.Table.al
+      CityList.Page.al
+      CityCard.Page.al
+    /Trade/
+      TradeRelationship.Table.al
+  /Guilds/
+    /Registry/
+      Guild.Table.al
+      GuildMember.Table.al
+  /Communication/
+    /Protocols/
+      MessageProtocol.Table.al
+```
+
+---
+
 ## �📝 **Next Steps & Documentation Updates**
 
 ### **Immediate Actions:**
