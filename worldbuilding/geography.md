@@ -4,6 +4,44 @@
 
 ---
 
+## World Scale & Structure
+
+### Planet Size
+**Circumference:** ~8,000-10,000 miles (roughly 1/3 to 1/2 Earth size, between Moon and Mars)
+**Comparison:** Smaller than Earth (24,900 miles), larger than Moon (6,800 miles)
+
+### Continental Structure
+**Two Main Continents:**
+- **West Continent:** ~600-1,000 miles across, diverse climates from frozen north to desert south
+- **East Continent:** Similar size, great lakes region, varied terrain
+
+**Major Islands:**
+- **Virellia (Northern Trade Hub):** Large island between continents, south of arctic circle (Iceland-like position)
+- **Umbros (Southern Tropical Chain):** Scattered warm islands along southern rim, closer to equator
+
+**Floating City:**
+- **Nimbuspire (Aetheros):** Travels between continents through the sky
+
+### Travel Times
+
+**Land Routes (Caravan):**
+- Average speed: ~20-25 miles per day
+- City-to-city: **2-4 weeks** typical
+- Terrain modifiers: Easy (1.0x), Moderate (0.75x), Difficult (0.5x)
+
+**Coastal Sea Routes (Same Continent):**
+- Average speed: ~50-100 miles per day (wind dependent)
+- Typical voyage: **10-20 days**
+
+**Trans-Oceanic Voyages:**
+- Between continents: **4-5 weeks**
+- Major trade commitment, expensive, requires planning
+
+**Portal Travel:**
+- Instant (but expensive, limited access, capacity restrictions)
+
+---
+
 ## Geographic Philosophy in Nubimancy
 
 The Nubimancy world features **diverse and challenging geography** that significantly impacts business operations:
@@ -13,8 +51,221 @@ The Nubimancy world features **diverse and challenging geography** that signific
 - **Volcanic Regions:** High temperatures, specialized equipment needs
 - **Frozen Wastes:** Cold preservation, harsh travel conditions
 - **Sea Routes:** Maritime logistics, weather dependencies
+- **Continental Divide:** Trans-oceanic trade requires major investment
+- **Island Nations:** Strategic chokepoints for trade routes
 
 Geography isn't just scenery—it's a **core business constraint** that drives PTE requirements.
+
+---
+
+## Continental Distribution
+
+### West Continent
+
+**Northern Regions:**
+- **Sylvaran Enclaves** (Verdelune): Ancient forests, druidic culture, isolationist
+- **Underhelm Kingdom** (Helm's Call, Brasshollow, Stonegate): Underground/mountain dwarven cities
+- **Nivara** (Frostmere): Frozen far north, glacial, isolationist and mystical
+
+**Central Regions:**
+- **Solendria** (Sunveil): Inland golden plains, artistic, sun-worshipping culture
+- **Astravelle** (Starhollow): Eastern shore, mystical crater city under aurora
+- **Lumineth** (Glimmerdeep): Underground western shore, bioluminescent caverns
+
+**Southern Regions:**
+- **Cindralis Sovereignty** (Ashford, Ironmere): Volcanic/industrial kingdom, fire-aligned
+- **Siroccane Realm** (Akran): Southwest desert, nomadic traders
+- **Altavere** (Skyreach): Eastern shore cliffside city, wind magic
+
+### East Continent
+
+**Northern Regions:**
+- **Durnholde** (Stonegate): Far north mountain fortress, stoic craftsmanship
+- **Drakthar** (Cragspire): Northeastern dragon highlands, martial dragonborn culture
+- **Gearhame** (Brasshollow): Northern deep valley, engineering and tinkering
+
+**Central Regions:**
+- **Varnok** (Ironmere): Great lakes industrial region, guild-run, pragmatic
+- **Bramblewyn** (Thornmere): Inland swamps, alchemical culture, mysterious
+
+**Southern Regions:**
+- **Aurumvale Republic** (Goldentarn): Southern river valley, merchant/banking hub, neutral
+- **Thalassor** (Seastrand): Coastal kingdom, maritime and cosmopolitan
+- **Fenroth** (Mirefen): Southeastern coastal marshes, herbalist survivalists
+
+### Island Nations
+
+**Northern Trade Hub:**
+- **Virellia** (Bellharbor, Seastrand): Large island between continents, south of arctic circle
+- Strategic position for northern maritime routes
+- Diplomatic power, leisure/luxury focus
+- Critical trade crossroads
+
+**Southern Tropical Chain:**
+- **Umbros** (Duskwatch): Mystical twilight isles, perpetual dusk
+- Popular with pirates and mystics
+- Warm water routes, exotic goods
+- Dangerous but profitable trade
+
+### Floating City
+
+**Aetheros Magocracy:**
+- **Nimbuspire**: Travels between West and East continents
+- Provides magical air trade routes
+- Not bound by geography
+- Portal hub connecting distant locations
+
+---
+
+## Climate Zones
+
+### Arctic/Subarctic
+- **Nivara** (frozen north, West)
+- **Durnholde** (mountain fortress, far north East)
+- **Virellia** (northern island, moderated by ocean)
+
+### Temperate
+- **Sylvaran Enclaves** (forests, West)
+- **Underhelm** (underground maintains temperature)
+- **Gearhame** (northern valleys, East)
+- **Drakthar** (highlands, East)
+
+### Plains/Agricultural
+- **Solendria** (golden plains, West)
+- **Aurumvale** (river valley, East)
+
+### Desert/Arid
+- **Siroccane Realm** (southwest desert, West)
+- **Cindralis** (volcanic heat creates arid zones, West)
+
+### Tropical/Humid
+- **Umbros** (southern island chain)
+- **Fenroth** (coastal marshes, southeast East)
+
+### Swamp/Wetland
+- **Bramblewyn** (inland swamps, East)
+- **Fenroth** (coastal marshes, East)
+
+---
+
+## Strategic Trade Routes
+
+### Northern Maritime Route
+**Path:** Through Virellia island (connects northern nations across continents)
+**Advantages:**
+- Shorter than southern route
+- Virellia provides resupply point
+- Established diplomatic connections
+
+**Challenges:**
+- Colder weather, ice in winter months
+- Storms in northern seas
+- Limited warm-weather goods
+
+**Key Trade:**
+- Underhelm metals → East continent
+- Gearhame engineering → West continent
+- Northern furs and timber
+
+### Southern Tropical Route
+**Path:** Through Umbros island chain (warm water southern passage)
+**Advantages:**
+- Warm weather year-round
+- Exotic tropical goods available
+- Multiple island stops possible
+
+**Challenges:**
+- Pirate activity (major threat)
+- Longer distance
+- Island chain navigation complex
+
+**Key Trade:**
+- Tropical spices, exotic materials
+- Luxury goods from Virellia
+- Siroccane desert goods → East
+
+### Central Cross-Continental (Air)
+**Path:** Nimbuspire floating city provides magical air trade
+**Advantages:**
+- Bypasses geography entirely
+- Fast (relatively)
+- Magical goods specialty
+
+**Challenges:**
+- Extremely expensive
+- Capacity limits
+- Access restrictions
+- Not all cities have lift/flight capability
+
+**Key Trade:**
+- Magical research and artifacts
+- High-value, low-weight luxury items
+- Urgent diplomatic communications
+
+### Great Lakes Hub (East Continent)
+**Center:** Varnok controls major freshwater industrial region
+**Advantages:**
+- Inland water transport (cheaper than overland)
+- Industrial production center
+- Connects multiple East continent regions
+
+**Key Trade:**
+- Industrial goods distribution
+- Ironworks and manufacturing
+- Freshwater fish and resources
+
+### Desert Caravan Routes (West Continent)
+**Path:** Siroccane Realm connects southwestern regions
+**Advantages:**
+- Specialized desert navigation expertise
+- Access to desert-exclusive goods
+- Nomadic trade networks
+
+**Challenges:**
+- Extreme heat and sandstorms
+- Limited water
+- Long distances between settlements
+
+**Key Trade:**
+- Desert spices, silk, glass
+- Connection to southern coast (Cindralis)
+
+---
+
+## Resource Distribution by Region
+
+### Mining & Metals
+- **Underhelm** (West): Deep mining, precious metals, gems
+- **Durnholde** (East): Mountain mining, iron and steel
+- **Drakthar** (East): Dragon highlands, rare dragonsteel
+- **Cindralis** (West): Volcanic minerals, obsidian
+
+### Agriculture & Food
+- **Solendria** (West): Grain, wine, textiles from plains
+- **Aurumvale** (East): River valley farming, diverse crops
+- **Fenroth** (East): Marsh rice, medicinal herbs
+
+### Industrial Manufacturing
+- **Cindralis** (West): Volcanic power for forges, smelting
+- **Varnok** (East): Water-powered mills, ironworks
+- **Gearhame** (East): Precision engineering, clockwork
+
+### Magical Resources
+- **Aetheros** (Floating): Arcane research, enchanted devices
+- **Astravelle** (West): Star magic, dream crystals
+- **Lumineth** (West): Bioluminescent materials, glowing inks
+- **Umbros** (Islands): Twilight magic, shadowglass
+
+### Rare Herbs & Alchemy
+- **Bramblewyn** (East): Swamp potions, poisons
+- **Fenroth** (East): Marsh herbs, dyes
+- **Sylvaran** (West): Forest alchemical ingredients
+- **Thornmere**: Swamp wood, medicinal plants
+
+### Maritime Trade
+- **Virellia** (Northern Island): Luxury goods, pearls, fish
+- **Thalassor** (East): Exotic spices from sea trade
+- **Umbros** (Southern Islands): Tropical goods, rare materials
 
 ---
 
