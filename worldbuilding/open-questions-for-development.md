@@ -1,135 +1,99 @@
 ---
-title: "Open Questions for Development"
-tags: ["worldbuilding", "development", "questions", "planning"]
-summary: "Remaining worldbuilding questions that need answers to support the demo business platform"
+title: "Worldbuilding Guidelines - Remaining Questions"
+tags: ["worldbuilding", "guidelines", "questions"]
+summary: "Remaining worldbuilding questions (most rules now established)"
 updated: 2025-10-21
 ---
 
-# Open Questions for Development
+# Worldbuilding Guidelines - Remaining Questions
 
-**Purpose:** Track remaining worldbuilding questions for Nubimancy demo development.
+**Purpose:** Track remaining worldbuilding questions. Most core rules now established.
 
----
-
-## ✅ ANSWERED - See Dedicated Documents
-
-The following major question categories have been answered and moved to dedicated files:
-
-1. **Scale & Numbers** → See [geography.md](./geography.md) - Population, travel times, world scale
-2. **Currency & Economics** → See [economics-and-currency.md](./economics-and-currency.md) - All pricing, wages, exchange rates
-3. **Calendar & Time System** → See [calendar-and-time.md](./calendar-and-time.md) - AC calendar, moons, holidays
-4. **Measurement Systems** → See [measurements-and-units.md](./measurements-and-units.md) - Weight, volume, distance units
-5. **Nubimancy System** → See [nubimancy-system.md](./nubimancy-system.md) - Crystal tablets, Ledger Realm, automatons
+**Scope:** Broad strokes, patterns, and constraints - NOT specific item names, prices, or quantities (that's demo data).
 
 ---
 
-## 🔶 HIGH PRIORITY - Still Needed
+## ✅ WORLDBUILDING FOUNDATION COMPLETE
 
-### 1. Trade Goods Reality ⭐⭐⭐
+The following establish the "rules of the world" for demo data creation:
 
-**Why Critical:** Can't create BC item master data or realistic sales orders without this
-
-**What's Needed:**
-- [ ] Specific export goods for each major city (not just categories)
-- [ ] Typical shipment examples with actual items
-- [ ] Seasonal goods and harvest timings
-- [ ] Prohibited/restricted goods by kingdom
-- [ ] Item pricing (integrate with economics.md pricing)
-
-**Example Format Needed:**
-```
-Goldentarn → Ashford shipment:
-- 50 bushels of grain @ 2 gold/bushel = 100 gold
-- 10 barrels of wine @ 15 gold/barrel = 150 gold
-Total cargo value: 250 gold
-Shipping cost: 35 gold (Yellow route, 2 cwt, 400 miles)
-```
-
-**Impact:** Unlocks sales orders, inventory planning, route optimization
+1. **World Scale & Geography** → [geography.md](./geography.md)
+2. **Economic Systems** → [economics-and-currency.md](./economics-and-currency.md)
+3. **Time & Calendar** → [calendar-and-time.md](./calendar-and-time.md)
+4. **Measurement Standards** → [measurements-and-units.md](./measurements-and-units.md)
+5. **Technology Platform** → [nubimancy-system.md](./nubimancy-system.md)
+6. **Political Landscape & Trade Restrictions** → [kingdoms-and-politics.md](./kingdoms-and-politics.md)
+7. **World Dangers** → [dangers-and-threats.md](./dangers-and-threats.md)
+8. **Hero Motivations** → [hero-ecological-impact.md](./hero-ecological-impact.md)
+9. **Trade Categories** → [cities.md](./cities.md)
+10. **Magic Systems & Availability** → [magic-systems.md](./magic-systems.md) ✨ NEW
+11. **Labor, Guilds & Employment** → [labor-and-guilds.md](./labor-and-guilds.md) ✨ NEW
 
 ---
 
-### 2. Guild Structures & Labor ⭐⭐
+## 🔷 NICE-TO-HAVE WORLDBUILDING (Optional - Can Skip)
 
-**Why Important:** Affects BC HR/payroll setup significantly
+These patterns add flavor but aren't required for BC demo functionality:
 
-**Caravan Captain Guild:**
-- [ ] Governance structure
-- [ ] Membership requirements & dues
-- [ ] Benefits (insurance, retirement, training)
+### Technology Level Details
+- Writing materials before Nubimancy (paper ledgers, scrolls?)
+- Non-magical communication speeds (couriers, pigeons?)
+- Timekeeping precision (clocks, sundials?)
+- Non-magical preservation options (ice, salt, smoking?)
 
-**Employment Classification:**
-- [ ] Captains: Employees or contractors?
-- [ ] Guards: Employed by whom?
-- [ ] Tax implications
+### Daily Life Patterns
+- Work hours by profession/kingdom
+- Tavern culture and drinking customs (Thorin's business model)
+- Social class mobility and structures
 
-**Certification:**
-- [ ] Training duration/process
-- [ ] Levels and recertification
+### Post-Plague Social Details
+- Food safety protocol specifics (Thorin's certifications)
+- Health check procedures (border crossings)
+- Psychological trust issues (commerce impacts)
 
-**Impact:** BC HR setup, payroll processing
+### Competition Landscape Details
+- Specific competitor names
+- Market share estimates
+- Portal service provider names
 
----
-
-### 3. Magic Availability & Costs ⭐
-
-**Why Important:** Service tier differentiation
-
-**Needed:**
-- [ ] Magical scroll costs
-- [ ] Scrying service pricing
-- [ ] Portal costs per person/weight
-- [ ] Preservation enchantment costs
-- [ ] Ward pricing and duration
-- [ ] Who can use magic (population %)
-
-**Impact:** Premium service pricing, operating costs
+### Regulatory Framework Details
+- Licensing requirements by kingdom
+- Contract law specifics
+- Cross-kingdom trade regulation details
 
 ---
 
-## 🔷 MEDIUM PRIORITY
+## 📋 Distinction: Worldbuilding vs. Demo Data
 
-### 4. Technology Level Consistency
-- [ ] Writing materials and record-keeping
-- [ ] Non-magical communication methods
-- [ ] Timekeeping tools
-- [ ] Non-magical preservation methods
+**Worldbuilding (Established):**
+- Rules, patterns, ranges
+- "Grain costs 1-3 gold per bushel depending on season/quality"
+- "Caravan Captains are independent contractors"
+- "Magic is scarce - only 1-2% can do mid-tier enchantments"
 
-### 5. Daily Life & Culture
-- [ ] Work hours and patterns
-- [ ] Tavern culture and meal customs
-- [ ] Social class structures
-
-### 6. Post-Plague Specifics
-- [ ] Health protocols details
-- [ ] Psychological impacts
-- [ ] New regulations
-
-### 7. Competition & Market
-- [ ] Competitor names and details
-- [ ] Market share estimates
-- [ ] Portal service providers
-
-### 8. Government & Regulation
-- [ ] Licensing requirements
-- [ ] Trade regulations
-- [ ] Contract law
-- [ ] Taxation
-
-### 9. Literacy & Education
-- [ ] Literacy rates by kingdom
-- [ ] Education systems
+**Demo Data (Next Phase):**
+- Specific instances following the rules
+- "Item #GRN-001: Premium Wheat, 2.5 gold/bushel, stock: 150 bushels"
+- "Captain Marcus Ironroad, Contract #CAP-042, 200 gold monthly"
+- "Sales Order #SO-1247: Goldentarn → Ashford, delivery 15/9/2247"
 
 ---
 
-## 🎯 Recommended Next Steps
+## 🎯 Status: Worldbuilding Complete for BC Demo
 
-**Immediate Focus:**
-1. **Trade Goods** + **Bran's Routes** - Create actual demo data
-2. **Magic Costs** - Finalize service pricing
+**Core rules established:**
+✅ Magic costs and availability
+✅ Employment/guild structures
+✅ Trade restrictions
+✅ Seasonal patterns (sufficient guidance)
+✅ Currency, calendar, measurements
+✅ Political landscape
+✅ World dangers and hero motivations
 
-**Then:** Guild Structures, Competition details
+**Ready for:** Demo Data team to create specific BC instances following these rules!
+
+**Optional additions:** Technology level, daily life, competition details can be added as needed for narrative flavor, but NOT required for BC demo functionality.
 
 ---
 
-*Updated: 2025-10-21 - Reorganized, moved answered content to dedicated files*
+*Updated: 2025-10-21 - Core worldbuilding complete, ready for demo data phase*

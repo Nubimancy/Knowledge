@@ -869,4 +869,136 @@ Not primarily about helping people - about PROTECTING CREATURES from:
 
 ---
 
-*This document establishes the political landscape that shapes how the heroes' businesses operate across kingdoms, navigate diplomacy, and leverage their unique neutral-hero status.*
+
+
+---
+
+## Trade Restrictions & Compliance
+
+**Purpose:** Nimbus Core enforces kingdom trade restrictions via **Item Category blocking** - preventing illegal sales orders before creation. Demonstrates BC's validation and blocking features.
+
+### Item Category Restriction Framework
+
+**Four Primary Restriction Categories:**
+
+1. **Weapons & Military Goods:**
+   - Items: Swords, armor, siege equipment, military enchantments, tactical potions
+   - Rationale: Kingdoms at war/conflict prohibit weapons imports/exports
+   - Impact: Bran occasionally transports for kingdom armories - must verify compliance
+
+2. **Dangerous Magical Components:**
+   - Items: Volatile reagents, unstable crystals, cursed artifacts, necromantic materials
+   - Rationale: Safety hazards, misuse potential, dark magic prohibition
+   - Impact: Rini's Haven sources rare ingredients - some require permits or banned
+
+3. **Regulated Substances:**
+   - Items: Alcohol, mind-altering potions, addictive compounds, restricted herbs
+   - Rationale: Cultural/religious prohibitions, public health, addiction prevention
+   - Impact: Thorin's alcohol faces kingdom-specific restrictions (some ban entirely)
+
+4. **Cultural/Religious Restricted Items:**
+   - Items: Sacred materials, religiously significant artifacts, culturally offensive goods
+   - Rationale: Religious law, cultural sensitivity, diplomatic agreements
+   - Impact: Must respect kingdom values - acceptable in one, offensive in another
+
+**Restriction Types (BC Enforcement):**
+- **Total Ban (Block):** Cannot create sales order with this Category to this Customer/Location
+- **Permit Required (Approval Workflow):** Order created but requires approval before fulfillment
+- **Quantity Limit (Validation Rule):** Can ship up to X units per order/period
+- **Warning Only (Compliance Note):** Order proceeds but flagged for review
+
+### Nimbus Core Enforcement Mechanism
+
+**How System Prevents Illegal Orders:**
+
+1. **Master Restriction Table:**
+   - Item Category × Kingdom × Restriction Type
+   - Updated quarterly by Aethernet Assembly
+   - Pushed to all businesses via Nimbus Core sync
+
+2. **Sales Order Validation (Real-Time Blocking):**
+   - When creating order, system checks:
+     - Item Category of each line
+     - Ship-to Kingdom/Location
+     - Customer's registered kingdom
+   - If restriction found ? Block with error message
+   - Example: "Cannot ship Category 'Alcohol' to Kingdom 'Stoneveil' - Cultural Prohibition"
+
+3. **Pre-Order Compliance Check:**
+   - Bran's route planners check restrictions BEFORE accepting contracts
+   - Prevents accepting illegal cargo (competitive advantage)
+   - Nimbus Core provides "Compliance Report" for planning
+
+4. **Audit Trail:**
+   - All blocked attempts logged
+   - Compliance reporting for kingdom inspections
+   - Demonstrates heroes' adherence to trade law
+
+**BC Features Demonstrated:**
+- Item Category Blocking by customer/ship-to
+- Sales Order Validation rules
+- Approval Workflows for permits
+- Compliance Reporting and audit trails
+- Multi-Jurisdiction Rules
+- Master Data Governance (centralized management)
+
+### Kingdom-Specific Restriction Examples
+
+**Sample Profiles (Pattern Demonstration):**
+
+- **Stoneveil (Conservative Mountain Kingdom):**
+  - BANNED: Alcohol (religious), mind-altering potions
+  - PERMIT REQUIRED: Weapons (military approval), dangerous components
+  - Cultural: No spider-derived goods (taboo)
+
+- **Bramblewyn (Environmentalist Forest Kingdom):**
+  - BANNED: Rare wood products (conservation), endangered creature components
+  - PERMIT REQUIRED: Nature/weather-affecting magical items
+  - Cultural: Druidic sacred materials restricted
+
+- **Fenroth (Pragmatic Marshland):**
+  - BANNED: Very few (free trade philosophy)
+  - PERMIT REQUIRED: Dangerous components (safety only)
+  - Cultural: Minimal restrictions
+
+- **Valdora (War-Torn Coastal):**
+  - BANNED: Weapons to non-military (active conflict), siege equipment
+  - PERMIT REQUIRED: All military goods (strict control)
+  - Cultural: Post-war trauma affects certain categories
+
+### Heroes' Ethical Overlay
+
+**Additional Restrictions Beyond Legal:**
+
+1. **No Slave-Labor Goods:** Won't transport items from forced labor (even if legal)
+2. **No Plague Contraband:** Won't ship fake "cures" or charlatan "protection"
+3. **No Weapons to Aggressors:** Won't supply kingdoms in unjust wars (hero judgment)
+4. **No Endangered Components:** Refuse near-threatened species beyond legal protection
+5. **No Corruption Goods:** Won't transport bribes or enable corrupt practices
+
+**BC Implementation:**
+- Heroes' ethical restrictions in Nimbus Core table
+- Apply to ALL hero businesses
+- Tracked separately from legal restrictions
+- Customer communication: "Ethical standards prevent this shipment"
+
+**Competitive Positioning:** "Our system won't accept illegal or unethical orders" - builds trust, differentiates from competitors
+
+### Smuggling Economics
+
+**Black Market Reality:**
+- Price premium for illegal goods: 200-400% markup
+- Competitor temptation: Some willing to risk smuggling
+- Heroes' stance: Refuse even when highly profitable
+- Nimbus Core prevents "accidents": System enforces compliance
+
+**Common Smuggling Categories (Heroes Refuse):**
+- Alcohol to prohibition kingdoms: 300% premium, heroes refuse
+- Weapons to embargoed kingdoms: 400% premium, heroes refuse
+- Fake magic items: Massive margins, heroes refuse (Delyra exposes frauds)
+- Endangered components: Limited supply = high prices, heroes refuse
+
+**Demo Value:** "Order Rejected - Compliance Violation" demos show system governance in action
+
+---
+
