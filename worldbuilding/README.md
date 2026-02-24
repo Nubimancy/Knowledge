@@ -37,12 +37,25 @@ This folder contains the foundational worldbuilding documents for the Nubimancy 
 | **cultures.md** | 🔴 Placeholder | Cultural commerce rules, business customs, communication styles. | 30+ "[To be completed]" |
 | **guilds.md** | 🔴 Placeholder | Guild operations, certification levels, compensation structures. | 20+ "[To be completed]" |
 
-### 🆕 **NEWLY CREATED** (Ready for development)
+### 🆕 **NEWLY CREATED — Creature & Ecology** (Ready for development)
 
 | File | Status | Description |
 |------|--------|-------------|
 | **magical-creatures-taxonomy.md** | 🟡 Framework | Complete creature classification system, conservation status, habitat protection zones. Foundation for material economy. |
 | **creature-materials-processing.md** | 🟡 Framework | Ethical sourcing standards, material processing chains, supply chain integration. Supports item generation. |
+
+### 🆕 **NEWLY CREATED — Hero-Domain Placeholders** (Structure defined, content needed)
+
+| File | Status | Hero Dependency | Description |
+|------|--------|-----------------|-------------|
+| **brewing-and-ale-culture.md** | 🔴 Placeholder | Thorin | Ale categories, quality standards, preservation requirements, tavern commerce, festivals. |
+| **enchantment-types-and-magical-craft.md** | 🔴 Placeholder | Delyra | Enchantment taxonomy, decay mechanics, refresh services, multiplanar crafting, commercial market. |
+| **portal-network-and-mage-specializations.md** | 🔴 Placeholder | Bran / Delyra / Rini | Portal infrastructure, mage specialization tiers, service market, dimensional access. |
+| **arena-types-and-combat-traditions.md** | 🔴 Placeholder | Rini | Arena types, combat traditions by culture, fighter classification, tournament structure, broadcasting. |
+| **dimensional-pocket-mechanics.md** | 🔴 Placeholder | Delyra | Pocket dimension creation, stability maintenance, commercial applications, legal framework. |
+| **warden-territory-system.md** | 🔴 Placeholder | Weltina | Warden roles, territory classification, patrol operations, harvesting oversight, migration corridors. |
+| **preservation-magic-and-scroll-technology.md** | 🔴 Placeholder | Bran | Scroll technology, preservation requirements, scrying intelligence, arcane mail services. |
+| **patronage-and-auction-culture.md** | 🔴 Placeholder | Weltina / Rini | Patronage tiers, auction formats, creature auctions, broadcast rights auctions, event culture. |
 
 ### 📋 **META DOCUMENTATION**
 
@@ -55,26 +68,28 @@ This folder contains the foundational worldbuilding documents for the Nubimancy 
 
 ## 🎯 Development Priority Recommendations
 
-### **Phase 1: Critical for Demo Data Generation** 
+### **Phase 1: Critical for Demo Data Generation**
 **Priority: HIGH** - Required for systematic data generation
 
-1. **Complete creature materials framework** - Essential for item generation templates
-2. **Flesh out cultural naming patterns** - Required for business name generation  
-3. **Define guild operational details** - Needed for resource and vendor relationships
+1. **Flesh out hero-domain placeholders** — `brewing-and-ale-culture.md`, `enchantment-types-and-magical-craft.md`, `arena-types-and-combat-traditions.md`, `dimensional-pocket-mechanics.md` are CRITICAL for Thorin, Delyra, and Rini data
+2. **Complete creature materials framework** — Essential for Weltina item generation templates
+3. **Flesh out cultural naming patterns** — Required for business name generation (`cultures.md`)
+4. **Define guild operational details** — Needed for resource and vendor relationships (`guilds.md`)
 
 ### **Phase 2: Enhanced Demo Scenarios**
 **Priority: MEDIUM** - Adds richness but not blocking
 
-1. **Expand seasonal business patterns** - Supports advanced BC scenarios
-2. **Detail specific threats and mitigation** - Creates risk management scenarios
-3. **Define technology implementation specifics** - Supports integration demonstrations
+1. **Flesh out HIGH-priority hero placeholders** — `portal-network-and-mage-specializations.md`, `warden-territory-system.md`, `preservation-magic-and-scroll-technology.md`, `patronage-and-auction-culture.md`
+2. **Expand seasonal business patterns** — Supports advanced BC scenarios (calendar-and-time.md)
+3. **Detail specific threats and mitigation** — Creates risk management scenarios
+4. **Define technology implementation specifics** — Supports integration demonstrations (nubimancy-system.md)
 
-### **Phase 3: Narrative Enhancement**  
+### **Phase 3: Narrative Enhancement**
 **Priority: LOW** - Adds flavor but doesn't affect BC functionality
 
-1. **Cultural customs and etiquette details** - Enhances storytelling
-2. **Daily life patterns and social structures** - Background enrichment
-3. **Competitive landscape specifics** - Market positioning context
+1. **Cultural customs and etiquette details** — Enhances storytelling
+2. **Daily life patterns and social structures** — Background enrichment
+3. **Competitive landscape specifics** — Market positioning context
 
 ---
 
@@ -124,8 +139,8 @@ This folder contains the foundational worldbuilding documents for the Nubimancy 
 
 ### **Worldbuilding Completion:**
 - ✅ **10 Complete documents** providing systematic rules and constraints
-- 🟡 **6 Framework documents** with structure established, details in progress  
-- 🔴 **2 Placeholder-heavy documents** requiring significant development
+- 🟡 **6 Framework documents** with structure established, details in progress
+- 🔴 **10 Placeholder documents** requiring significant development (2 original + 8 new hero-domain placeholders)
 
 ### **Demo Data Readiness:**
 - ✅ **Economic systems** fully defined for pricing and currency
@@ -152,4 +167,4 @@ When updating any worldbuilding document:
 
 ---
 
-*Last Updated: 2026-02-23 - Added creature materials framework, updated completion status*
+*Last Updated: 2026-02-24 - Added 8 hero-domain placeholder documents, updated priority recommendations and completion status*
