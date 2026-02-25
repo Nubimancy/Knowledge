@@ -85,7 +85,7 @@ Imbuing objects with lasting magical properties
 
 ### 2. Alchemy
 Crafting consumable magical effects from rare ingredients
-- **Monetized by:** Rini (Haven - potion production, ingredient sourcing)
+- **Monetized by:** Weltina (Haven Wildlife Preserve - potion production, ingredient sourcing)
 
 ### 3. General Spellcasting
 Direct magical effects (combat spells, utility magic, divination)
@@ -113,112 +113,111 @@ Direct magical effects (combat spells, utility magic, divination)
 - **Availability:** Only ~50-80 mages worldwide can open portals
 - **Duration:** 5-10 seconds maximum hold time
 - **Throughput:** One wagon OR ~10 people per opening
-- **Cost:** 800-1,500 gold per portal opening
 - **Scheduling:** Book weeks in advance, limited slots
 - **Locations:** Only between established portal anchors (major cities)
 
+### Cost Structure
+
+Portal costs have two components:
+
+**Annual anchor maintenance: 800 AC/year**
+Covers the materials to prepare and stabilize a portal anchor space. Applied as a **Portal Anchor Maintenance Seal** (Tier 3 enchantment) at each anchor point annually. Required at both ends of any permanent or semi-permanent gate. See `enchantment-types-and-magical-craft.md` for details.
+
+**Per-use reagent cost: 200–500 AC per opening**
+Materials consumed each time a portal is opened. Varies by distance, cargo weight, and mage tier. For on-demand mage-opened portals, the mage's professional service fee is charged on top of this.
+
+**Combined service fee for on-demand openings: 800–1,500 AC total**
+When a top-tier mage opens a portal on request (no permanent infrastructure), clients pay a single contracted fee covering reagents, labor, and expertise. The internal cost breakdown is the mage's to manage; clients see the combined rate.
+
 ### Business Impact
-- NOT viable for regular logistics (why Bran's network exists)
-- Only for absolute emergencies or ultra-high-value cargo
-- Luxury service for wealthy individuals
+- NOT viable for regular logistics (why Bran's caravan network exists)
+- Only for emergencies or ultra-high-value cargo where speed outweighs cost
+- Luxury service for wealthy individuals and kingdom-level transactions
 - Most people have never seen portal magic (seems mythical)
 
 ---
 
 ## Enchantment Services
 
+> **Pricing reference:** Specific enchantment costs, lifespans, tiers, and service structures are defined in [`enchantment-types-and-magical-craft.md`](./enchantment-types-and-magical-craft.md). The information below covers operational context and business model structure only.
+
 ### Preservation Enchantments (Thorin's Barrels)
 
 **Requirements:**
-- Skill: Mid-tier practitioner
+- Skill: Journeyman to Master enchanter (tier depends on ale type)
 - Time: 1-2 hours per barrel
-- Duration: 6-12 months
-- Cost: 50-120 gold per barrel
 - Capacity: 4-6 barrels per day per enchanter
+- Renewal: Required on a scheduled cycle managed by Caskwardens
 
 **Business Model:**
-Thorin employs 1-2 mid-tier enchanters dedicated to barrel preservation. Major operational cost, key differentiator.
+Thorin's barrel preservation uses tiered enchantments — basic freshness charms for standard dwarven ales, specialist Tier 3 preservation for delicate elven varieties. Enchantment is a major operational cost and a key product differentiator (sealed barrels visibly resist tampering, directly addressing post-plague food-safety anxiety).
 
 ### Protective Wards (Bran's Wagons)
 
 **Requirements:**
-- Skill: Mid-tier practitioner
+- Skill: Journeyman to Master enchanter
 - Time: 2-4 hours per wagon
-- Duration: 3-6 months
 - Renewal: Required before expiration
 
-**Cost Tiers:**
-- **Basic (50-80 gold):** Weather resistance, pest deterrent, 3 months
-- **Standard (100-150 gold):** Above + structural reinforcement, minor creature deterrent, 4-5 months
-- **Premium (200-300 gold):** Above + significant magical protection, tracking prevention, 6 months
-
-**Protection:** Weather damage, pests, minor magical creature attacks, basic scrying (premium tier)
+**Protection levels:** Weather damage, pests, minor magical creature attacks, basic scrying countermeasures at higher tiers. See the Cargo Ward (Tier 2) and related entries in `enchantment-types-and-magical-craft.md` for the full product line and pricing.
 
 **Business Model:**
-Bran offers wards as premium add-on. Employs 1-2 mid-tier enchanters for wagon inspection/renewal.
+Bran offers wards as a premium add-on service. Bran-employed enchanters handle fleet inspection and renewal; volume batch pricing available for large caravan sets.
 
 ### Scrying/Tracking Services
 
 **Requirements:**
-- Skill: Mid-tier with divination specialty
+- Skill: Mid-tier enchanter with divination specialty
 - Fresh connection to target required
 
-**Pricing:**
-- Initial scrying (location finding): 150-250 gold per attempt
-- Continuous tracking (24-hour monitoring): 400-600 gold per day
-- Long-duration tracking enchantment: 300-500 gold for 1-month
+**Service types:**
+- Initial scrying (location finding): one-time assessment
+- Continuous tracking: dedicated mage; daily capacity limited
+- Long-duration tracking enchantment: fixed-period item
+
+These are premium, low-volume services negotiated individually based on distance, duration, and urgency. Not covered in the standard enchantment catalogue.
 
 **Limitations:**
 - Can be blocked by counter-magic (premium wards)
-- Continuous tracking exhausting - requires dedicated mage
-- Privacy concerns - kingdoms have varying consent laws
+- Continuous tracking is exhausting — requires a dedicated mage
+- Privacy concerns — kingdoms have varying consent laws
 
 **Business Use:**
-Bran offers tracking enchantments for high-value cargo (500+ gold shipments) as premium add-on.
+Bran offers tracking enchantments for high-value cargo as a premium add-on. Supply is limited by available specialist practitioners.
 
 ### Communication Scrolls
 
 **Requirements:**
-- Skill: Lower mid-tier (journeyman scribe-mage)
+- Skill: Journeyman scribe-mage
 - Availability: Limited to major cities with scribe-mage guilds
 
 **Details:**
-- Cost: 40-80 gold per matched pair
 - Single-use (one message, scrolls consumed)
 - Short message only (~100 words max)
-- Must be pre-paired (can't send to arbitrary destination)
+- Must be pre-paired; cannot send to an arbitrary destination
 - 1-hour delay for message to appear
-
-**Who Can Use:** Anyone literate (no magical ability required to use, only to create)
+- Anyone literate can use them (no magical ability required to use, only to create)
 
 **Business Impact:**
-Heroes use sparingly for critical coordination (caravan emergencies, urgent order changes). Physical couriers much cheaper, just slower.
+Heroes use sparingly for critical coordination (caravan emergencies, urgent order changes). Physical couriers are much cheaper, just slower. For reusable communication options, see the Communication Crystal (Tier 2) in `enchantment-types-and-magical-craft.md`.
 
 ---
 
 ## Persistent Enchanted Items
 
-Common enchanted tools representing "democratization of magic" - created by apprentice/journeyman enchanters:
+Common enchanted tools representing the "democratization of magic" — created by apprentice and journeyman enchanters at Art of Facts. For complete pricing, lifespans, tier classifications, and refresh requirements, see [`enchantment-types-and-magical-craft.md`](./enchantment-types-and-magical-craft.md).
 
 ### Flameless Lanterns
-- Cost: 50-80 gold
-- Duration: Permanent (fades after 5-10 years heavy use)
-- Benefit: No fire risk, no fuel costs, consistent light
-- Market: Mining operations, dangerous environments
+Steady warm light without flame risk; adjustable brightness. Popular with mining operations, dangerous environments, and households eliminating fire hazard. Available at Tier 1 (short-cycle, refreshable).
 
 ### Ever-Sharp Tools
-- Cost: 30-60 gold (base tool + 20-40 gold enchantment)
-- Duration: Permanent, weakens over 3-5 years
-- Benefit: Reduced maintenance, consistent quality
+Maintains edge quality on chisels, blades, and cutting tools — no dulling under normal use. Reduces maintenance costs for craftspeople and smiths. Available at Tier 1 (short-cycle, refreshable).
 
 ### Minor Protective Charms
-- Cost: 20-50 gold
-- Duration: 6-12 months
-- Benefit: Mild luck, minor injury reduction, comfort in danger
-- **Charlatan Risk:** MANY fake charms - Delyra's certification matters!
+Mild luck effects, minor injury reduction, comfort in dangerous situations. **Charlatan Risk:** Many fake charms circulate in the post-plague market — Delyra's certification seal distinguishes genuine items from frauds.
 
 **Business Model (Art of Facts):**
-Delyra employs 5-10 lower-tier apprentices creating these items following proven patterns. Higher-margin items with steady demand. Also offers certification to distinguish real from frauds.
+Delyra employs journeyman enchanters producing these items following proven patterns. Steady household and tradesperson demand. Refresh services (see `enchantment-types-and-magical-craft.md`) provide recurring revenue alongside initial item sales.
 
 ---
 
@@ -322,26 +321,27 @@ Multi-layered BC complexity - procurement with seasonal/regional dependencies, m
 
 ### Business Services
 
-**1. Magical Certification (Fraud Prevention):**
-- Verify authenticity of magical items, detect charlatans
-- Cost: 10-30 gold per item
-- Builds trust in magical economy
+**1. Magical Authentication (Fraud Prevention):**
+- Verify authenticity of magical items; detect charlatan fakes
+- **Free to all customers** — deliberate loss-leader to rebuild post-plague trust in magic
+- Every genuine Art of Facts item carries a certification seal; free health checks available at any shop
+- Goal: make buyers expect a seal, so unsealed items become visibly suspect
 
 **2. Custom Enchantment Orders:**
-- Bespoke enchanted items for specific needs
-- Cost: 100-500+ gold
-- Timeline: 1-4 weeks
+- Bespoke enchanted items for specific needs, Tier 1–4
+- See `enchantment-types-and-magical-craft.md` for pricing by tier and commission structure
+- Timeline: days to months depending on complexity and lunar scheduling
 
 **3. Enchanted Item Retail:**
-- Pre-made items (lanterns, tools, charms)
-- Margin: 60-80% markup (standardized, apprentice labor)
+- Pre-made catalog items (see `enchantment-types-and-magical-craft.md` for full catalogue)
+- Margin: 60-80% markup on Tier 1 standardized items (journeyman labor, high volume)
 
 **4. Magical Education/Apprenticeships:**
 - Train promising young mages
 - Revenue: Apprentices work for reduced wage in exchange for training
 
 **Why This Matters:**
-Single business with multiple revenue streams requiring different BC modules - services, projects, manufacturing, retail, HR/training.
+Single business with multiple revenue streams requiring different BC modules — services, projects, manufacturing, retail, HR/training.
 
 ---
 

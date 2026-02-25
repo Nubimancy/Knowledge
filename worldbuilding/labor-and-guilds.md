@@ -51,8 +51,8 @@ Mixed employment models across hero businesses demonstrate BC's flexibility in h
 - Premium: Bran guarantees security quality, manages liability
 
 **Payment:**
-- Captain-employed: Negotiated by Captain (8-15 gold/day + food)
-- Bran-employed: Wage tiers (Recruit 10g/day, Veteran 15g/day, Elite 20g/day)
+- Captain-employed: Negotiated by Captain (8-15 silver/day + food)
+- Bran-employed: Wage tiers (Recruit 10s/day, Veteran 15s/day, Elite 20s/day)
 
 **BC Features:** Multiple employment types, cost allocation to routes/jobs, payroll processing, vendor payment processing
 

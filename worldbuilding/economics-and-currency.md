@@ -17,6 +17,13 @@ updated: 2025-10-21
 
 ### Currency Decimal System (BC Compatible)
 
+**BC Representation:** All amounts are stored and reported in Aurumvale Crowns (the merchant standard) using a two-decimal gold format:
+- **1.00** = 1 gold crown
+- **0.10** = 1 silver piece (10 silver = 1 gold)
+- **0.01** = 1 copper piece (10 copper = 1 silver; 100 copper = 1 gold)
+
+This keeps Business Central ledger entries clean and human-readable. Other kingdom currencies are converted to Crowns at exchange rate before posting.
+
 **Tier 1 (Wealthy/Stable): `ggg.s` format**
 - 10 silver = 1 gold
 - **Aurumvale (Crowns):** Baseline merchant standard
@@ -157,8 +164,8 @@ updated: 2025-10-21
 **Loaf of bread:** 1 copper (0.01 gold)
 **Mug of ale:** 2-3 copper (0.02-0.03 gold)
 
-**Night at inn (common):** 8 silver (0.08 gold)
-**Night at inn (nice):** 15 silver (0.15 gold)
+**Night at inn (common):** 8 silver (0.80 gold)
+**Night at inn (nice):** 15 silver (1.50 gold)
 
 ### Equipment & Goods
 
@@ -202,7 +209,7 @@ updated: 2025-10-21
 ## Thorin's Ale Pricing
 
 ### Wholesale (Barrels)
-**Standard ale barrel (50 gal / ~400 mugs):** 8 gold
+**Standard ale barrel (hogshead, 63 gal / ~500 mugs):** 8 gold
 **Premium barrel:** 14 gold
 **Protection ale barrel (enchanted):** 20 gold
 
@@ -213,8 +220,8 @@ updated: 2025-10-21
 ### Tavern Economics
 **Standard barrel economics:**
 - Cost: 8 gold wholesale
-- Revenue: 400 mugs × 3 copper = 12 gold
-- **Profit: 4 gold (50% margin)**
+- Revenue: 500 mugs × 3 copper = 15 gold
+- **Gross profit: 7 gold (47% gross margin / 87.5% markup over cost)**
 
 ---
 
@@ -230,13 +237,15 @@ updated: 2025-10-21
 - Cloak of warmth, +1 weapon
 - Defensive charms, utility magic
 
-**Major artifacts:** 500-2,000 gold
-- Bag of holding, powerful protection
-- Significant magical items
+**Major artifacts:** Varies widely based on materials and ingredient rarity
+- Bag of holding, powerful protection, significant magical items
+- Rare creature components (dragon scales, phoenix feathers, unicorn components) can dominate cost
+- See `enchantment-types-and-magical-craft.md` for Tier 3 (200–800 AC) and Tier 4 (1,500–10,000+) pricing
 
-**Custom commissions:** 20-5,000 gold
-- Depends on complexity
-- Materials, time, enchanting difficulty
+**Custom commissions:** 20–10,000+ gold
+- Depends on tier, complexity, and materials required
+- Materials, time, enchanting difficulty, and lunar scheduling all factor in
+- See `enchantment-types-and-magical-craft.md` for full tier breakdown
 
 ---
 

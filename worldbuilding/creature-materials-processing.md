@@ -10,6 +10,12 @@ updated: 2026-02-23
 ## Purpose
 This document defines the **creature → materials → items** supply chain that forms the backbone of ethical magical component sourcing. It supports **Weltina's conservation business model** and provides materials for **Delyra's enchanting operations**.
 
+It is vital to note that this is EXAMPLES of creatures and categories.  The world is vast and diverse, and there are many more creatures and materials that could be added to this framework.  The key is to maintain the ethical sourcing standards and ensure that all materials are harvested in a way that respects the creatures and their habitats.
+
+We should have a wide example of various animals, large and small to show the diversity of materials and the ethical harvesting methods.  This will help to create a rich and immersive world for our readers, while also promoting the importance of conservation and ethical sourcing.
+
+But, I think we should also to have fantastical creatures that come from the other planes, or that are the result of magical experimentation.  This will add an element of wonder and excitement to our world, while also allowing us to explore the ethical implications of using materials from these creatures.
+
 ---
 
 ## Material Categories by Source
