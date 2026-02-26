@@ -2,9 +2,9 @@
 
 _The Living Chronicle of Our Destination-Driven Development Strategy_
 
-**Last Updated:** 2025-09-28  
-**Status:** Active Planning Phase  
-**Purpose:** Master planning document for reverse-engineering our perfect end-state architecture
+**Last Updated:** 2026-02-26
+**Status:** Built — Phase 1 complete; production code exists for all 19 extensions
+**Purpose:** Master reference for the Nubimancy extension family architecture, used by the implementation and consulting team to align data and business processes to the extension structure
 
 ---
 
@@ -135,7 +135,7 @@ a8559f9d-232d-4325-a62f-2ac0478fb8cf
 
 ---
 
-### **🔨 Phase 1: The Private Creative Workshop**
+### **🔨 Phase 1: The Private Creative Workshop** ✅ COMPLETE
 
 _"Build everything to validate the vision"_
 
@@ -148,11 +148,12 @@ _"Build everything to validate the vision"_
 - Rapid development to create complete "North Star" demonstration
 - Validate cross-hero collaborations and shared PTE components
 
-**Success Criteria:**
+**Outcome:**
 
-- Complete, working ecosystem demonstrating all hero business processes
-- Functional integrations between all AppSource apps and PTE components
-- Proven technical architecture supporting the storytelling vision
+- All 19 production extensions built with full 4-layer dependency infrastructure
+- Formal `app.json` dependencies wired across all hero PTEs
+- Cross-hero integrations implemented using Pattern C relay (CrossHeroRelayEvents) and Pattern D dependency injection
+- See `PencilSketch/.docs/Building/ArchitecturePlanning.md` for the technical as-built reference
 
 ---
 
@@ -233,11 +234,11 @@ _"Execute the planned journey with engaging storytelling"_
 | 4    | PTE DevOps Demonstration Project             | Custom development lifecycle             | Planning  |
 | 5    | AppSource DevOps Demonstration Project       | Marketplace deployment                   | Active    |
 | 7    | Public Learning Repository Collection        | Foundation laid                          | Closed ✅ |
-| 11   | Nubimancy Core Foundation App                | Central AppSource foundation             | New       |
-| 12   | Supply Chain & Logistics AppSource Suite     | Bran & Thorin's domain                   | Planning  |
-| 13   | Service & Project Management AppSource Suite | Rini & Weltina's domain                  | Planning  |
-| 14   | Manufacturing & Retail AppSource Suite       | Delyra's domain                          | Planning  |
-| 15   | Hero Business PTE Collection                 | Custom extensions for all heroes         | Planning  |
+| 11   | Nubimancy Core Foundation App                | Central AppSource foundation             | Built ✅  |
+| 12   | Supply Chain & Logistics AppSource Suite     | Bran & Thorin's domain                   | Built ✅  |
+| 13   | Service & Project Management AppSource Suite | Rini & Weltina's domain                  | Built ✅  |
+| 14   | Manufacturing & Retail AppSource Suite       | Delyra's domain                          | Built ✅  |
+| 15   | Hero Business PTE Collection                 | Custom extensions for all heroes         | Built ✅  |
 
 ---
 
@@ -249,39 +250,37 @@ flowchart TD
     BC[🏛️ Business Central<br/>Foundation Layer]
 
     %% Nimbus Core Foundation
-    NC[🏰 Nimbus Core Foundation<br/>Epic 11<br/>Cities • Guilds • Communication • Commerce Rules]
+    NC[🏰 NimbusCoreFoundation<br/>Cities · Guilds · Communication · Commerce Rules<br/>+ CrossHeroRelayEvents relay codeunit]
 
     %% AppSource Layer
-    NS[🚚 Nimbus Supply<br/>Epic 12<br/>Logistics & Distribution]
-    NE[🏆 Nimbus Exhibition<br/>Epic 13<br/>Events & Services]
-    NM[🔧 Nimbus Manufacturing<br/>Epic 14<br/>Production & Retail]
+    NS[🚚 NimbusSupply<br/>Logistics & Distribution]
+    NE[🏆 NimbusExhibition<br/>Events & Services]
+    NM[🔧 NimbusManufacturing<br/>Production & Retail]
 
-    %% Heroes Layer
-    Bran[🧝‍♂️ Bran Brightwood<br/>Caravans of Fortune<br/>Multi-realm Logistics]
-    Rini[🥊 Rini Glar<br/>The Pinnacle League<br/>Tournament Management]
-    Weltina[🐾 Weltina Boons<br/>Haven Wildlife Preserve<br/>Conservation & Education]
-    Delyra[🔮 Delyra<br/>Art of Facts Shops<br/>Magical Manufacturing]
-    Thorin[🍺 Thorin Caskmantle<br/>Port & Pour<br/>Ale Distribution]
+    %% Bran PTEs
+    B1[📦 BranMysticalRoutePlanning<br/>Mystical route planning, living cargo,<br/>creature transport]
+    B2[📜 BranArcaneScrollProcessing<br/>Scroll orders, climate compatibility,<br/>preservation]
+    B3[🎪 BranCaravanFestivalCoordination<br/>Festival route coordination,<br/>market analysis, trade intelligence]
 
-    %% PTE Components - Supply Chain
-    PTE_MPS[📦 Multi-planar Shipping<br/>Inter-realm routing & portals]
-    PTE_EI[📊 Enhanced Inventory<br/>Magical preservation & scrying]
-    PTE_TIH[📈 Trade Intelligence Hub<br/>Market analysis & optimization]
-    PTE_AI[🍻 Alebound Integration<br/>Guild & brewery management]
+    %% Thorin PTEs
+    T1[🍺 ThorinDwarvenAleQualityTracking<br/>Ale preservation, barrel enchantment,<br/>quality control]
+    T2[🏚️ ThorinTavernNetworkRelationshipManagement<br/>Tavern partnerships, caskwarden hubs,<br/>ale curation]
+    T3[🎉 ThorinCommunityEventOrchestration<br/>Cross-guild convoys, community events,<br/>shared logistics]
 
-    %% PTE Components - Events & Services
-    PTE_REG[📝 Registration<br/>Advanced qualification system]
-    PTE_RANK[🏆 Ranking<br/>Performance analytics & brackets]
-    PTE_ARENA[🏟️ Arena Management<br/>Multi-environment facilities]
-    PTE_PAT[💰 Patronage<br/>Ethical funding & auctions]
-    PTE_CM[🦄 Creature Management<br/>Living inventory system]
-    PTE_EDU[📚 Educational Integration<br/>Curriculum & partnerships]
-    PTE_WGC[⚔️ Warden Guild Coordination<br/>Territory & compliance management]
+    %% Rini PTEs
+    R1[🏆 RiniDimensionalTournamentBrackets<br/>Tournament structure, brackets,<br/>arena hazard management]
+    R2[📊 RiniFighterProgressionAnalytics<br/>Fighter careers, skill progression,<br/>mentorship]
+    R3[📡 RiniMultiRealmSportsBroadcasting<br/>Broadcast coordination, multi-realm<br/>simulcast, fan engagement]
 
-    %% PTE Components - Manufacturing
-    PTE_MWC[⚡ Multi-planar Work Centers<br/>Time stream workshops]
-    PTE_ERS[🔮 Enchantment Refresh Services<br/>Complex magical processes]
-    PTE_PSM[🌀 Portal Shop Management<br/>Multi-dimensional retail]
+    %% Weltina PTEs
+    W1[🐾 WeltinaAdvancedCreatureCareProtocols<br/>Species care, habitat management,<br/>veterinary records]
+    W2[💰 WeltinaPatronAuctionManagement<br/>Ethical auctions, patron funding,<br/>provenance & sustainability]
+    W3[🌿 WeltinaMultiHabitatManagement<br/>Conservation, warden territories,<br/>migration corridor management]
+
+    %% Delyra PTEs
+    D1[⚡ DelyraMultiplanarWorkCenters<br/>Time-stream workshops, temporal anchors,<br/>dimensional scheduling]
+    D2[🔮 DelyraEnchantmentRefreshServices<br/>Enchantment refresh workflows,<br/>rare material & provenance tracking]
+    D3[🌀 DelyraPortalShopManagement<br/>Multi-dimensional retail, portal<br/>delivery, cross-location inventory]
 
     %% Foundation Connections
     BC --> NC
@@ -289,63 +288,85 @@ flowchart TD
     NC --> NE
     NC --> NM
 
-    %% Hero Dependencies
-    NS --> Bran
-    NS --> Thorin
-    NE --> Rini
-    NE --> Weltina
-    NM --> Delyra
+    %% AppSource → Hero PTE Connections
+    NS --> B1
+    NS --> B2
+    NS --> B3
+    NS --> T1
+    NS --> T2
+    NS --> T3
+    NE --> R1
+    NE --> R2
+    NE --> R3
+    NE --> W1
+    NE --> W2
+    NE --> W3
+    NM --> D1
+    NM --> D2
+    NM --> D3
 
-    %% Hero to PTE Connections
-    Bran --> PTE_MPS
-    Bran --> PTE_EI
-    Bran --> PTE_TIH
-
-    Thorin --> PTE_MPS
-    Thorin --> PTE_EI
-    Thorin --> PTE_AI
-
-    Rini --> PTE_REG
-    Rini --> PTE_RANK
-    Rini --> PTE_ARENA
-
-    Weltina --> PTE_REG
-    Weltina --> PTE_PAT
-    Weltina --> PTE_CM
-    Weltina --> PTE_EDU
-    Weltina --> PTE_WGC
-
-    Delyra --> PTE_MWC
-    Delyra --> PTE_ERS
-    Delyra --> PTE_PSM
-
-    %% Cross-Hero Collaborations
-    Bran -.->|Shared Routes & Warehouses| Thorin
-    Bran -.->|Material Shipping & Deliveries| Delyra
-    Rini -.->|Educational Programs & Events| Weltina
-
-    %% Shared PTE Components
-    PTE_MPS -.->|Shared by| PTE_EI
-    PTE_REG -.->|Shared by| PTE_EDU
+    %% Cross-hero integrations (via Core relay or numeric-ID subscriptions)
+    B1 -.->|creature transport → Core relay → Weltina| W3
+    W3 -.->|migration hazards → Core relay → Bran| B1
+    D2 -.->|subscribes numeric 57799| W2
+    D2 -.->|subscribes numeric 62799| T1
+    D2 -.->|subscribes numeric 51006| B2
 
     %% Styling
     classDef foundation fill:#e1f5fe,stroke:#01579b,stroke-width:3px
     classDef core fill:#f3e5f5,stroke:#4a148c,stroke-width:3px
     classDef appsource fill:#e8f5e8,stroke:#1b5e20,stroke-width:3px
-    classDef heroes fill:#fff3e0,stroke:#e65100,stroke-width:3px
-    classDef pte fill:#fce4ec,stroke:#880e4f,stroke-width:3px
-    classDef collaboration stroke:#666,stroke-width:2px,stroke-dasharray: 5 5
+    classDef bran fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef thorin fill:#fff8e1,stroke:#f57f17,stroke-width:2px
+    classDef rini fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    classDef weltina fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef delyra fill:#ede7f6,stroke:#4527a0,stroke-width:2px
 
     class BC foundation
     class NC core
     class NS,NE,NM appsource
-    class Bran,Rini,Weltina,Delyra,Thorin heroes
-    class PTE_MPS,PTE_EI,PTE_TIH,PTE_AI,PTE_REG,PTE_RANK,PTE_ARENA,PTE_PAT,PTE_CM,PTE_EDU,PTE_WGC,PTE_MWC,PTE_ERS,PTE_PSM pte
+    class B1,B2,B3 bran
+    class T1,T2,T3 thorin
+    class R1,R2,R3 rini
+    class W1,W2,W3 weltina
+    class D1,D2,D3 delyra
 ```
+
+> **Note on cross-hero integrations:** Bran↔Weltina bidirectional events route through `CrossHeroRelayEvents` (codeunit 80061) in NimbusCoreFoundation — both already depend on Core, so no illegal peer dependency is needed. Delyra's subscriptions to Weltina/Thorin/Bran use numeric codeunit IDs (loose coupling, no app.json dep required).
 
 ---
 
-## �🏛️ **Architecture Layer Breakdown**
+## 🗂️ **Conceptual → Actual Extension Mapping**
+
+The business-capability names used throughout this document map to the following built AL extensions. Use this table when aligning data, schemas, or consulting deliverables to specific extensions.
+
+| Hero | Business Capability (this doc) | Actual Extension Name | AppSource Dependency |
+|------|--------------------------------|----------------------|----------------------|
+| — | Nimbus Core Foundation | **NimbusCoreFoundation** | — |
+| — | Nimbus Supply | **NimbusSupply** | NimbusCoreFoundation |
+| — | Nimbus Exhibition | **NimbusExhibition** | NimbusCoreFoundation |
+| — | Nimbus Manufacturing | **NimbusManufacturing** | NimbusCoreFoundation |
+| Bran | Mystical Route Planning / Living Cargo | **BranMysticalRoutePlanning** | Core + Supply |
+| Bran | Enhanced Inventory / Arcane Scroll Processing | **BranArcaneScrollProcessing** | Core + Supply |
+| Bran | Trade Intelligence Hub / Caravan Festival | **BranCaravanFestivalCoordination** | Core + Supply |
+| Thorin | Dwarven Ale Quality / Enhanced Inventory | **ThorinDwarvenAleQualityTracking** | Core + Supply |
+| Thorin | Alebound Integration / Tavern Network | **ThorinTavernNetworkRelationshipManagement** | Core + Supply |
+| Thorin | Multi-planar Shipping / Community Event | **ThorinCommunityEventOrchestration** | Core + Supply |
+| Rini | Registration / Dimensional Tournament Brackets | **RiniDimensionalTournamentBrackets** | Core + Exhibition |
+| Rini | Ranking / Fighter Progression Analytics | **RiniFighterProgressionAnalytics** | Core + Exhibition |
+| Rini | Arena Management / Sports Broadcasting | **RiniMultiRealmSportsBroadcasting** | Core + Exhibition |
+| Weltina | Creature Management + Creature Care Protocols | **WeltinaAdvancedCreatureCareProtocols** | Core + Exhibition |
+| Weltina | Patronage + Ethical Auctions | **WeltinaPatronAuctionManagement** | Core + Exhibition |
+| Weltina | Educational Integration + Warden Guild + Conservation | **WeltinaMultiHabitatManagement** | Core + Exhibition |
+| Delyra | Multi-planar Work Centers | **DelyraMultiplanarWorkCenters** | Core + Manufacturing |
+| Delyra | Enchantment Refresh Services | **DelyraEnchantmentRefreshServices** | Core + Manufacturing |
+| Delyra | Portal Shop Management | **DelyraPortalShopManagement** | Core + Manufacturing |
+
+> **Weltina note:** The original plan described 4 PTE components (Patronage, Creature Management, Educational Integration, Warden Guild Coordination). These consolidated into 3 extensions during build: creature care and species management → `WeltinaAdvancedCreatureCareProtocols`; patronage/auctions/provenance → `WeltinaPatronAuctionManagement`; conservation, warden territories, education, and migration management → `WeltinaMultiHabitatManagement`.
+
+---
+
+## 🏛️ **Architecture Layer Breakdown**
 
 ### **Layer 1: Foundation - Business Central**
 
@@ -483,22 +504,22 @@ _Custom extensions that enhance AppSource capabilities with hero-specific magic_
 
 #### **🧝‍♂️ Bran Brightwood Specializations**
 
-**Dependencies:** Nimbus Core + Nimbus Supply
+**Dependencies:** NimbusCoreFoundation + NimbusSupply
 
-**PTE Components:**
+**Extensions (3 PTEs):**
 
-- **Multi-planar Shipping**
+- **BranMysticalRoutePlanning** — _Mystical Route Planning / Living Cargo_
   - Inter-realm route calculation with geographic challenge algorithms
-  - Portal-based shipping integration
-  - Multi-dimensional delivery tracking
-- **Enhanced Inventory**
+  - Living cargo and creature transport coordination
+  - Portal-based shipping integration and multi-dimensional delivery tracking
+- **BranArcaneScrollProcessing** — _Enhanced Inventory / Scroll Processing_
   - Magical scroll order parsing and integration
   - Real-time scrying-based inventory updates
   - Climate-specific preservation tracking across realms
-- **Trade Intelligence Hub**
+- **BranCaravanFestivalCoordination** — _Trade Intelligence Hub / Festival Coordination_
   - Per-city market analysis and price optimization
   - Cultural commerce rule enforcement
-  - Dynamic route profitability calculations
+  - Dynamic route profitability calculations and festival route management
 
 **Unique Business Processes:**
 
@@ -509,7 +530,13 @@ _Custom extensions that enhance AppSource capabilities with hero-specific magic_
 
 #### **🥊 Rini Glar Specializations**
 
-**Dependencies:** Nimbus Core + Nimbus Exhibition
+**Dependencies:** NimbusCoreFoundation + NimbusExhibition
+
+**Extensions (3 PTEs):**
+
+- **RiniDimensionalTournamentBrackets** — _Registration / Arena Management / Tournament Structure_
+- **RiniFighterProgressionAnalytics** — _Ranking / Fighter Career Progression_
+- **RiniMultiRealmSportsBroadcasting** — _Multi-realm Broadcast Coordination_
 
 **Arena Network Locations:**
 
@@ -519,24 +546,24 @@ _Custom extensions that enhance AppSource capabilities with hero-specific magic_
 - **Wavebreaker (Akran, Siroccane)** - Mobile desert arena with sand obstacles
 - **The Peak (Portal Access)** - Exclusive mountain championship venue
 
-**PTE Components:**
+**PTE Capabilities:**
 
-- **Registration**
+- **RiniDimensionalTournamentBrackets** (Registration + Arena Management)
   - Advanced fighter qualification with combat skill assessment
-  - Cross-arena fighter tracking and career progression
   - Specialized registration workflows per arena type and cultural requirements
   - Fighter skill translation matrix (how abilities apply across different combat environments)
-- **Ranking**
+  - Specialized facility management per unique arena type (sea, underground, volcanic, desert, mountain)
+  - Environmental hazard management and safety protocols per arena
+  - Portal-based arena access coordination for The Peak
+- **RiniFighterProgressionAnalytics** (Ranking + Career Progression)
   - Complex tournament bracket management with arena-specific rules
   - Performance analytics with environmental factor weighting
   - Cross-arena ranking synchronization and progression tracking
   - Real-time ranking calculations during multi-arena tournaments
-- **Arena Management**
-  - Specialized facility management per unique arena type (sea, underground, volcanic, desert, mountain)
-  - Environmental hazard management and safety protocols per arena
-  - Cultural sensitivity integration with local city customs and regulations
-  - Portal-based arena access coordination for The Peak
-  - Seasonal scheduling optimization based on city climates and cultural events
+- **RiniMultiRealmSportsBroadcasting** (Broadcast + Fan Engagement)
+  - Multi-realm broadcast coordination and simulcast management
+  - Tavern network broadcast distribution
+  - Fan engagement metrics, hall of fame, and season narrative tracking
 
 **Unique Business Processes:**
 
@@ -549,7 +576,15 @@ _Custom extensions that enhance AppSource capabilities with hero-specific magic_
 
 #### **🐾 Weltina Boons Specializations**
 
-**Dependencies:** Nimbus Core + Nimbus Exhibition
+**Dependencies:** NimbusCoreFoundation + NimbusExhibition
+
+**Extensions (3 PTEs):**
+
+- **WeltinaAdvancedCreatureCareProtocols** — _Creature Management + Species Care_
+- **WeltinaPatronAuctionManagement** — _Patronage + Ethical Auctions + Provenance_
+- **WeltinaMultiHabitatManagement** — _Educational Integration + Warden Guild Coordination + Conservation_
+
+> Note: The original architecture envisioned 4 separate PTE components (Patronage, Creature Management, Educational Integration, Warden Guild). These consolidated into 3 extensions during build. `WeltinaMultiHabitatManagement` is the largest, covering conservation, warden territory, education partnerships, and migration corridor management.
 
 **Multi-City Educational & Conservation Network:**
 
@@ -557,30 +592,29 @@ _Custom extensions that enhance AppSource capabilities with hero-specific magic_
 - **Creature Sourcing Territories:** Ashford (fire creatures), Frostmere (ice creatures), Thornmere (swamp creatures), Starhollow (dream creatures)
 - **Patron Demographics:** Goldentarn merchants, Nimbuspire researchers, cross-realm noble families
 
-**PTE Components:**
+**PTE Capabilities:**
 
-- **Patronage**
-  - Sophisticated patron funding with ethical constraint management
-  - Ethical harvesting auction coordination with sustainability tracking
-  - Multi-tier donor recognition and conservation impact reporting
-  - Cross-realm patron relationship management with cultural considerations
-- **Creature Management** (Living Inventory System)
+- **WeltinaAdvancedCreatureCareProtocols** (Creature Management + Species Care)
   - Magical creature health and lifecycle tracking (birth, growth, breeding, end-of-life)
   - Species-specific habitat optimization with climate and environmental controls
   - Behavioral monitoring and enrichment scheduling per creature type
   - Species interaction compatibility management for safe enclosure planning
   - Veterinary care scheduling and medical history tracking
-- **Educational Integration**
-  - Age-appropriate curriculum development with live creature interactions
-  - Multi-institutional educational partnership coordination across cities
-  - Visitor lodging integration with creature viewing and educational schedules
-  - Research collaboration tracking with academic institutions
-  - Educational impact assessment and conservation awareness measurement
-- **Warden Guild Coordination**
+- **WeltinaPatronAuctionManagement** (Patronage + Ethical Auctions + Provenance)
+  - Sophisticated patron funding with ethical constraint management
+  - Ethical harvesting auction coordination with sustainability tracking
+  - Multi-tier donor recognition and conservation impact reporting
+  - Cross-realm patron relationship management with cultural considerations
+  - Material provenance chain management and authentication
+- **WeltinaMultiHabitatManagement** (Educational Integration + Warden Guild + Conservation)
   - Territory assignment and performance management across collection regions
   - Ethical collection compliance monitoring and reporting
   - Contract management with sustainability and conservation quotas
   - Cross-regional creature sourcing optimization
+  - Age-appropriate curriculum development with live creature interactions
+  - Multi-institutional educational partnership coordination across cities
+  - Research collaboration tracking with academic institutions
+  - Migration corridor management and hazard alerting
 
 **Unique Business Processes:**
 
@@ -593,7 +627,13 @@ _Custom extensions that enhance AppSource capabilities with hero-specific magic_
 
 #### **🔮 Delyra Specializations**
 
-**Dependencies:** Nimbus Core + Nimbus Manufacturing
+**Dependencies:** NimbusCoreFoundation + NimbusManufacturing
+
+**Extensions (3 PTEs):**
+
+- **DelyraMultiplanarWorkCenters** — _Time-stream workshop management_
+- **DelyraEnchantmentRefreshServices** — _Enchantment refresh & rare material workflows_
+- **DelyraPortalShopManagement** — _Multi-dimensional retail & portal delivery_
 
 **Multi-Dimensional Business Architecture:**
 
@@ -635,7 +675,13 @@ _Custom extensions that enhance AppSource capabilities with hero-specific magic_
 
 #### **🍺 Thorin Caskmantle Specializations**
 
-**Dependencies:** Nimbus Core + Nimbus Supply
+**Dependencies:** NimbusCoreFoundation + NimbusSupply
+
+**Extensions (3 PTEs):**
+
+- **ThorinDwarvenAleQualityTracking** — _Ale preservation, barrel enchantment, quality control_
+- **ThorinTavernNetworkRelationshipManagement** — _Tavern partnerships, caskwarden hubs, ale curation_
+- **ThorinCommunityEventOrchestration** — _Cross-guild convoys, community events, shared logistics_
 
 **Magical Distribution Network Architecture:**
 
@@ -962,10 +1008,12 @@ _Custom extensions that enhance AppSource capabilities with hero-specific magic_
 - **No spaces** in field names
 - **No quote-requiring characters** (numbers, dots, special chars)
 - **No affixes** on base object fields
-- **Extensions ONLY:** Use `NIM` prefix (AppSource extensions) or `PTE` prefix (PTE extensions)
+- **Base object fields:** no prefix
+- **TableExtension fields:** use the extension's own ID range as the field number; field names have no required prefix (some PTE tableextension fields use a `PTE` prefix in practice — both conventions exist)
 - **Examples:**
   - ✅ Base object: `field(1; CityCode; Code[20])`
-  - ✅ Extension: `field(80001; NIMTradeHubIndicator; Boolean)`
+  - ✅ TableExtension (Thorin): `field(62040; AleGrade; Code[10])`
+  - ✅ TableExtension (Rini, PTE-prefixed): `field(53040; PTETournamentBracketCode; Code[20])`
   - ❌ Base object: `field(1; "City Code"; Code[20])`
   - ❌ Extension: `field(80001; "Trade Hub Indicator"; Boolean)`
 
@@ -982,11 +1030,13 @@ _Custom extensions that enhance AppSource capabilities with hero-specific magic_
 ### **Folder Structure & Namespaces**
 
 - **Module folders** in `/src/` directory align with object domain
-- **Namespace pattern:** `Nimbus.[AppName].[ModuleTreeMultilevelPath]`
-- **Examples:**
-  - Path: `/src/Cities/Management/` → Namespace: `Nimbus.CoreFoundation.Cities.Management`
-  - Path: `/src/Guilds/Coordination/` → Namespace: `Nimbus.CoreFoundation.Guilds.Coordination`
-  - Path: `/src/Communication/Protocols/` → Namespace: `Nimbus.CoreFoundation.Communication.Protocols`
+- **Namespace pattern:** `Nubimancy.[ExtensionShortName].[Module]`
+- **Examples (as built):**
+  - CoreFoundation geographic module → `Nubimancy.CoreFoundation.Geographic`
+  - NimbusSupply route module → `Nubimancy.Supply.Route`
+  - BranMysticalRoutePlanning migration module → `Nubimancy.MysticalRoute.Migration`
+  - ThorinDwarvenAleQualityTracking preservation module → `Nubimancy.DwarvenAle.Preservation`
+  - WeltinaMultiHabitatManagement habitat module → `Nubimancy.MultiHabitat.Habitat`
 
 ### **Module Organization Pattern**
 
@@ -1010,21 +1060,23 @@ _Custom extensions that enhance AppSource capabilities with hero-specific magic_
 
 ---
 
-## �📝 **Next Steps & Documentation Updates**
+## ✅ **Phase 1 Completed Work**
 
-### **Immediate Actions:**
+All Phase 1 build objectives are complete as of February 2026. The full 19-extension ecosystem is built with formal dependency infrastructure.
 
-1. Complete hero business process mapping (Rini, Weltina, Delyra, Thorin)
-2. Refine AppSource suite definitions based on hero requirements
-3. Detail PTE specifications with technical requirements
-4. Create integration API specifications
+Key technical references:
 
-### **Documentation Updates Needed:**
+- **Technical as-built reference:** `PencilSketch/.docs/Building/ArchitecturePlanning.md` — object IDs, dependency wiring, integration event map, Pattern A/B/C/D catalogue
+- **Gap analysis:** `mission-review.json` — evaluated all hero Primary Services and Specialized Offerings against built code
+- **Data planning:** `data-planning/README.md` — 73 CSV schemas mapping hero company data to BC master data tables
 
-- **ADO Epic Updates:** Add detailed user stories and acceptance criteria per hero
-- **Nubi-Knowledge Updates:** Expand hero business process documentation with architecture alignment
-- **Content Strategy:** Map architecture components to educational content opportunities
+### **Phase 2 Planning (Next)**
+
+- **Waypoint design:** define learning "save states" across the 19-extension ecosystem for the educational content arc
+- **Data generation:** populate the 73 CSV schemas using worldbuilding cultural naming patterns (see `data-planning/README.md`)
+- **RFP narrative:** build the "before state" per hero (paper ledgers, scroll chaos, no cross-realm visibility) to support the fictional ERP implementation story
+- **Content strategy:** map architecture components and hero business processes to educational content opportunities
 
 ---
 
-_This document will be continuously updated as we develop our architecture through hero business analysis and epic planning._
+_Updated 2026-02-26 to reflect Phase 1 build completion. For the authoritative technical reference see `PencilSketch/.docs/Building/ArchitecturePlanning.md`._
