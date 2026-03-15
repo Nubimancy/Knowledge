@@ -1,11 +1,11 @@
 # BC Master Data Validation Report
 
 **Prepared by:** @copilot (BC Validation Agent)  
-**Date:** 2026-03-15  
+**Date:** 2026-03-15 (updated 2026-03-15 — added RiniFighterProgressionAnalytics coverage)  
 **Repository:** Nubimancy/Knowledge  
-**Scope:** All 73 CSV files in `worldbuilding/data-planning/`
+**Scope:** All 91 CSV files in `worldbuilding/data-planning/`
 
-> **Note:** The originating issue referenced 22 CSV files; the actual folder contains **73 files** covering both core BC master data (files 01–14) and all Aethernet Assembly extension tables (files 15–73). All 73 have been assessed.
+> **Note:** The originating issue referenced 22 CSV files. At first review the folder contained **73 files** (files 01–73). Subsequent cross-reference with [Nubimancy/PencilSketch](https://github.com/Nubimancy/PencilSketch) revealed the `RiniFighterProgressionAnalytics` extension (18 new tables) had no corresponding CSV schema files. **18 new CSV files (74–91)** have been added to close this gap. All 91 files are now assessed.
 
 ---
 
@@ -155,15 +155,45 @@ These tables are custom AL extension entities defined in the `NimbusCoreFoundati
 
 ---
 
-## Section 8 — Summary Findings
+## Section 8 — RiniFighterProgressionAnalytics Extension Tables (Files 74–91)
+
+This extension was identified by cross-referencing [Nubimancy/PencilSketch](https://github.com/Nubimancy/PencilSketch). It had **no CSV schema files** in the data-planning folder at time of initial review. 18 new files (74–91) were created from the AL table definitions. A duplicate table ID (54005 used by both `ClearanceArenaRestriction` and `MentorshipAssignment`) was noted in the PencilSketch source — this should be resolved in the extension before BC deployment.
+
+The extension also defines `tableextension 54000 ResourceFighterExt extends Resource` which adds 16 fighter-specific fields to the BC `Resource` table. The existing `13-resources-by-company.csv` should be extended to include these columns for fighter resources; see Recommended Action item 14.
+
+| File Name | BC Entity Mapping | Missing Required Fields | Format Concerns | Recommended Action |
+|-----------|-------------------|------------------------|-----------------|-------------------|
+| **74-performance-metrics.csv** | `PerformanceMetric` (Table 54000) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | `Fighter_Resource_No` FK to BC `Resource`; `Arena_Code` FK to `57-arena-profiles.csv`; `Season_Code` FK to `58-tournament-seasons.csv`; `Match_Date` is BC Date format; `Raw_Score`, `Arena_Difficulty_Factor`, `Opponent_Strength_Factor`, `Arena_Strength_Rating`, `Arena_Weakness_Rating`, `Peer_Average_Score`, `Technique_Effectiveness_Pct` are Decimal; `Win` is boolean; `Peer_Rank_Tier` enum: Bronze, Silver, Gold, Platinum, Diamond | 🟢 READY — Transactional performance ledger; note AutoIncrement `Entry No.` is BC-generated and omitted from CSV |
+| **75-skill-assessments.csv** | `SkillAssessment` (Table 54001) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | `Fighter_Resource_No` FK to BC `Resource`; `Cultural_Tradition` FK to `17-cultural-traditions.csv`; `Skill_Level` enum: matches AL `SkillLevel` enum values; `Arena_Strength` / `Arena_Weakness` are boolean; `Assessment_Date` is BC Date format; `Matches_Using_Skill` is integer | 🟢 READY — Fighter skill master data; AutoIncrement `Entry No.` omitted |
+| **76-skill-translation-rules.csv** | `SkillTranslationRule` (Table 54002) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | `Arena_Compatibility` enum: Strong, Moderate, Weak; `Translation_Factor` is Decimal; `Minimum_Skill_Level_Required` enum matches AL `SkillLevel` | 🟢 READY — Cross-arena skill mapping reference table |
+| **77-injury-records.csv** | `InjuryRecord` (Table 54003) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | `Fighter_Resource_No` FK to BC `Resource`; `Injury_Date` / `Recovery_Start_Date` / `Expected_Return_Date` / `Actual_Return_Date` are BC Date format; `Injury_Type` enum: Acute, Chronic, Overuse; `Body_Region` enum: Head, Torso, Upper Limb, Lower Limb; `Severity` enum: Minor, Moderate, Serious, Critical; `Is_Active` / `Pattern_Alert` are boolean; `Recovery_Weeks_Estimate` is integer | 🟢 READY — Injury tracking ledger; note `Pattern_Alert` is BC-set automatically on insert |
+| **78-medical-clearances.csv** | `MedicalClearance` (Table 54004) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | `Fighter_Resource_No` FK to BC `Resource`; `Injury_Record_Entry_No` FK to `77-injury-records.csv` Entry No.; `Status` enum: matches AL `ClearanceStatus` enum; `Clearance_Date` / `Sign_Off_Date` / `Restriction_End_Date` / `Follow_Up_Date` are BC Date format; `Healer_Sign_Off` / `Follow_Up_Required` are boolean | 🟢 READY — Medical clearance tracking table |
+| **79-clearance-arena-restrictions.csv** | `ClearanceArenaRestriction` (Table 54005 — HealthInjury namespace) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | Composite PK `Clearance_No` + `Arena_Code`; `Clearance_No` FK to `78-medical-clearances.csv`; `Arena_Code` FK to `57-arena-profiles.csv` | ⚠️ **TABLE ID CONFLICT** — Table 54005 is also used by `MentorshipAssignment` (Mentorship namespace). This must be resolved in PencilSketch before BC deployment. Structure is correct otherwise — 🟢 READY pending ID fix |
+| **80-career-transition-plans.csv** | `CareerTransitionPlan` (Table 54006) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | `Fighter_Resource_No` FK to BC `Resource`; `Current_Career_Stage` / `Recommended_Career_Stage` enum matches AL `Career Stage` enum; `Evaluation_Date` / `Retirement_Date` are BC Date format; `Readiness_Score` / `Age_Factor` / `Injury_Factor` / `Performance_Factor` / `Skills_Factor` are Decimal (0–100 for Readiness_Score); `Target_Role` enum matches AL `PostCareerRole` enum; `Post_Career_Status` enum: Active, Retired, Transitioning | 🟢 READY — Career evaluation ledger; AutoIncrement `Entry No.` omitted |
+| **81-placement-opportunities.csv** | `PlacementOpportunity` (Table 54007) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | `Role_Type` enum: Guard, Trainer, Scout, Administrator; `Compensation_Per_Month` is Decimal; `Compensation_Currency` FK to BC `Currency`; `Required_Skill_*` fields are enum matching AL `SkillLevel`; `Is_Open` is boolean; `Assigned_Fighter_No` FK to BC `Resource`; `Assignment_Date` is BC Date format | 🟢 READY — Job placement reference table |
+| **82-mentorship-assignments.csv** | `MentorshipAssignment` (Table 54005 — Mentorship namespace) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | `Mentor_Resource_No` / `Mentee_Resource_No` FK to BC `Resource`; `Start_Date` / `End_Date` are BC Date format; `Is_Active` / `Cross_Cultural` are boolean; `Combat_Style_Focus` enum: Close Combat, Grappling, etc.; `Compensation_Frequency` enum: Monthly, Weekly, Per Session, Milestone-Based; `Matching_Score_Pct` / `Peer_Average_Advancement` / `Compensation_Amount` are Decimal; `Mentee_Start_Rank` / `Mentee_Current_Rank` are integer | ⚠️ **TABLE ID CONFLICT** — Table 54005 also used by `ClearanceArenaRestriction`. Resolve in PencilSketch. Structure is correct otherwise — 🟢 READY pending ID fix |
+| **83-training-camps.csv** | `TrainingCamp` (Table 54015) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | `Camp_No` is primary key (Code[20], No. Series `TCAMP`); `Arena_Code` FK to `57-arena-profiles.csv`; `Start_Date` / `End_Date` are BC Date format; `Arena_Compatibility` enum; `Capacity` is integer; `Price_Per_Fighter` is Decimal; `Currency_Code` FK to BC `Currency`; `Lead_Coach_Resource_No` FK to BC `Resource`; `Status` enum: Open, Confirmed, Cancelled, Completed | 🟡 MINOR — Add `TCAMP` to `03-number-series.csv` for Camp No. generation |
+| **84-training-camp-registrations.csv** | `TrainingCampRegistration` (Table 54016) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | `Registration_No` is primary key (Code[20], No. Series `TCAMPREG`); `Camp_No` FK to `83-training-camps.csv`; `Fighter_No` FK to BC `Resource`; `Registration_Date` is BC Date format; `Fee_Due` / `Fee_Paid` are Decimal; `Currency_Code` FK to BC `Currency`; `Attendance_Status` enum: Registered, Confirmed, Attended, No Show, Cancelled | 🟡 MINOR — Add `TCAMPREG` to `03-number-series.csv` |
+| **85-security-consulting-engagements.csv** | `SecurityConsultingEngagement` (Table 54017) — RiniFighterProgressionAnalytics extension | `Gen_Prod_Posting_Group` (needed to raise invoices via BC Service or Resource billing) | `Engagement_No` is primary key (Code[20], No. Series `SECENG`); `Client_No` FK to BC `Customer`; `Assigned_Consultant_No` FK to BC `Resource`; `Billable_Hours` / `Hourly_Rate` are Decimal; `Currency_Code` FK to BC `Currency`; `Invoiced` is boolean; `Status` enum: Open, In Progress, Completed, Cancelled; `Threat_Assessment_Status` enum: Pending, In Progress, Delivered, Reviewed; `TotalAmount` is computed Editable=false — omitted from CSV per convention | 🟡 MINOR — Add `SECENG` to number series; add `Gen_Prod_Posting_Group` for billing integration |
+| **86-threat-assessment-reports.csv** | `ThreatAssessmentReport` (Table 54018) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | `Report_No` is primary key (Code[20], No. Series `THREAT`); `Engagement_No` FK to `85-security-consulting-engagements.csv`; `Client_No` FK to BC `Customer`; `Assessment_Date` / `Delivery_Date` are BC Date format; `Threat_Level` enum: Low, Moderate, High, Critical; `Delivered` / `Client_Acknowledged` are boolean | 🟢 READY — Add `THREAT` to number series |
+| **87-security-training-programs.csv** | `SecurityTrainingProgram` (Table 54019) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | `Program_No` is primary key (Code[20], No. Series `SECTRN`); `Duration_Days` / `Capacity` are integer; `Price_Per_Participant` is Decimal; `Currency_Code` FK to BC `Currency`; `Status` enum: Draft, Active, Discontinued; `Lead_Instructor_No` FK to BC `Resource`; FlowFields `Enrolled_Count` / `Passed_Count` omitted | 🟢 READY — Add `SECTRN` to number series |
+| **88-training-curriculum-modules.csv** | `TrainingCurriculumModule` (Table 54020) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | Composite PK `Program_No` + `Module_No`; `Program_No` FK to `87-security-training-programs.csv`; `Module_No` is integer (sequence); `Duration_Hours` is Decimal; `Delivery_Method` enum: Lecture, Practical, Simulation, Assessment; `Is_Mandatory` is boolean | 🟢 READY — Curriculum detail table following BC line-table pattern |
+| **89-security-training-enrolments.csv** | `SecurityTrainingEnrolment` (Table 54021) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | `Enrolment_No` is primary key (Code[20], No. Series `SECENROL`); `Program_No` FK to `87-security-training-programs.csv`; `Customer_No` FK to BC `Customer`; `Enrolment_Date` / `Completion_Date` are BC Date format; `Fee_Due` / `Fee_Paid` are Decimal; `Passed` / `Certificate_Issued` are boolean | 🟢 READY — Add `SECENROL` to number series |
+| **90-event-security-plans.csv** | `EventSecurityPlan` (Table 54022) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | `Plan_No` is primary key (Code[20]); `Event_Type` enum: Tournament, Exhibition Match, Training Camp, Other; `Event_Date` is BC Date format; `Expected_Attendance` is integer; `Threat_Level` enum: Routine, Elevated, High, Critical; `Lead_Security_Officer_No` FK to BC `Resource`; `Approved` is boolean; `Approval_Date` is BC Date format; `Status` enum: Draft, Pending Approval, Approved, Executed, Cancelled; FlowField `Guard_Count` omitted | 🟢 READY — Security planning master table |
+| **91-security-guard-assignments.csv** | `SecurityGuardAssignment` (Table 54023) — RiniFighterProgressionAnalytics extension | No critical fields missing for custom extension | Composite PK `Plan_No` + `Line_No`; `Plan_No` FK to `90-event-security-plans.csv`; `Guild_Member_No` FK to BC `Resource`; `Shift_Start` / `Shift_End` / `Check_In_Time` are BC Time (HH:MM:SS) format — note Time fields are not standard in BC configuration package imports (consider Text format if issues arise); `Role` enum: Guard, Supervisor, Emergency Response, Perimeter, VIP Escort; `Cleared_For_High_Threat` / `Checked_In` are boolean | 🟡 MINOR — Time fields may require special handling in configuration package; consider `Shift_Start_Text` / `Shift_End_Text` (Text[5]) as alternative |
+
+---
+
+## Section 9 — Summary Findings
 
 ### Status Distribution
 
 | Status | Count | Files |
 |--------|-------|-------|
-| 🟢 **READY** | 44 | 05, 12, 15–20, 22–28, 30–34, 36–40, 43–44, 49, 53–59, 62–69, 72 |
-| 🟡 **MINOR** | 23 | 01, 03–04, 08, 11, 13–14, 21, 29, 35, 41–42, 45–48, 50–51, 60–61, 70–71, 73 |
+| 🟢 **READY** | 59 | 05, 12, 15–20, 22–28, 30–34, 36–40, 43–44, 49, 53–59, 62–69, 72, 74–82, 86–87, 89–90 |
+| 🟡 **MINOR** | 26 | 01, 03–04, 08, 11, 13–14, 21, 29, 35, 41–42, 45–48, 50–51, 60–61, 70–71, 73, 83–85, 91 |
 | 🔴 **REVIEW** | 6 | 02, 06, 07, 09, 10, 52 |
+| ⚠️ **ID CONFLICT** | 2 | 79, 82 (table 54005 used twice in PencilSketch — must resolve before BC deployment) |
 
 ### Critical Issues (🔴 REVIEW — Must Fix Before BC Import)
 
@@ -207,12 +237,32 @@ For successful BC configuration package import, respect this dependency order:
 16. 31-climate-zones          → depends on (none)
 17. 34-preservation-requirements → depends on 08, 31
 18. 42-ale-type-profiles       → depends on 08
-19. [remaining extension tables follow their FK chains]
+19. 57-arena-profiles          → depends on 15
+20. 58-tournament-seasons      → depends on (none)
+21. 75-skill-assessments       → depends on 14 (Resource), 17
+22. 76-skill-translation-rules → depends on (none)
+23. 77-injury-records          → depends on 14 (Resource), 57
+24. 78-medical-clearances      → depends on 14 (Resource), 77
+25. 79-clearance-arena-restrictions → depends on 78, 57
+26. 80-career-transition-plans → depends on 14 (Resource)
+27. 81-placement-opportunities → depends on 14 (Resource)
+28. 82-mentorship-assignments  → depends on 14 (Resource)
+29. 83-training-camps          → depends on 57
+30. 84-training-camp-registrations → depends on 83, 14 (Resource)
+31. 85-security-consulting-engagements → depends on 10 (Customer), 14 (Resource)
+32. 86-threat-assessment-reports → depends on 85, 10 (Customer)
+33. 87-security-training-programs → depends on 14 (Resource)
+34. 88-training-curriculum-modules → depends on 87
+35. 89-security-training-enrolments → depends on 87, 10 (Customer)
+36. 90-event-security-plans    → depends on 14 (Resource)
+37. 91-security-guard-assignments → depends on 90, 14 (Resource)
+38. 74-performance-metrics     → depends on 14 (Resource), 57, 58
+39. [remaining extension tables follow their FK chains]
 ```
 
 ---
 
-## Section 9 — Recommended Actions
+## Section 10 — Recommended Actions
 
 ### Immediate (Before Data Population)
 
@@ -244,8 +294,12 @@ For successful BC configuration package import, respect this dependency order:
 
 11. **Validate FK chain integrity:** Ensure all `Country_Region_Code` values in downstream files exist in `01-kingdoms-countries.csv`; all `City_Code` values exist in `15-cities.csv`; all `Location_Code` values exist in `11-locations-by-company.csv`
 12. **Separate FA Depreciation Book records** (`14-fixed-assets-by-company.csv`) into a companion import file since `Fixed Asset` and `FA Depreciation Book` are separate tables in BC
-13. **Follow the import order** in Section 8 to avoid foreign key violations during configuration package processing
+13. **Follow the import order** in Section 9 to avoid foreign key violations during configuration package processing
+
+14. **Extend `13-resources-by-company.csv`** with the 16 fighter-specific fields added by `ResourceFighterExt` (tableextension 54000): `Career_Stage`, `Total_Matches`, `Total_Wins`, `Total_Losses`, `Overall_Skill_Level`, `Fighting_Style`, `Cultural_Tradition`, `Clearance_Status`, `Has_Mentor`, `Is_Mentor`, `Mentor_Resource_No`, `Career_Start_Date`, `Qualification_Rank`. (Omit computed Editable=false fields: `Win_Rate_Pct`, `Active_Injuries`, `Normalized_Performance_Score`)
+
+15. **Resolve table ID conflict in PencilSketch:** `ClearanceArenaRestriction` and `MentorshipAssignment` both declare `table 54005`. Assign a unique ID to one before deploying to BC.
 
 ---
 
-*Report generated from schema-only CSV files (header rows validated; no data rows present at time of review). Re-validate after data population to check enum value compliance and FK referential integrity.*
+*Report generated from schema-only CSV files (header rows validated; no data rows present at time of review). Re-validate after data population to check enum value compliance and FK referential integrity. Files 74–91 were derived from AL table definitions in [Nubimancy/PencilSketch](https://github.com/Nubimancy/PencilSketch) (RiniFighterProgressionAnalytics extension).*
